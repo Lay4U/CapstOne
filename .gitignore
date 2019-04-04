@@ -1,1 +1,4 @@
 dataset.csv
+TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/data/WISDM_ar_v1.1_raw.txt
+TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/checkpoint/har.pbtxt
+TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/checkpoint/har.ckpt.meta
