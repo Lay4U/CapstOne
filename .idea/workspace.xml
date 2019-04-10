@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fe42bdf6-016a-4d89-aa7b-1ff292f674e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/paper.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_ver_4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/preprocessing-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/preprocessing-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Untitled.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Untitled.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Untitled.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data/Untitled.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gg.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/gg.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing-Copy1.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing-Copy1.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_ver-Copy1.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/test_ver-Copy1.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_ver.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/test_ver.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_ver_2.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/test_ver_2.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_ver_3.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/test_ver_3.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_ver_3.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_ver_3.py" afterDir="false" />
-    </list>
+    <list default="true" id="fe42bdf6-016a-4d89-aa7b-1ff292f674e1" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +13,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_ver_3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
+            <state relative-caret-position="3408">
               <caret line="152" selection-start-line="152" selection-end-line="181" selection-end-column="40" />
               <folding>
                 <element signature="e#51#70#0" expanded="true" />
@@ -37,14 +22,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/paper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-770">
-              <caret line="33" column="24" lean-forward="true" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="31" />
+            <state relative-caret-position="648">
+              <caret line="93" column="8" lean-forward="true" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="8" />
               <folding>
                 <element signature="e#1#20#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Go.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -257,7 +251,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.18956336" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19116081" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50106496" side_tool="true" weight="0.32937366" />
@@ -327,16 +321,12 @@
     <entry file="file://$PROJECT_DIR$/LSTM512_512_+lookback_0.jpg" />
     <entry file="file://$PROJECT_DIR$/LSTM512_512_+lookback_60.jpg" />
     <entry file="file://$PROJECT_DIR$/LSTM512_512_+lookback_62.jpg" />
-    <entry file="file://$PROJECT_DIR$/test_ver_4.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="55" column="20" selection-end-line="97" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/tt.jpg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/test_ver_3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
+        <state relative-caret-position="3408">
           <caret line="152" selection-start-line="152" selection-end-line="181" selection-end-column="40" />
           <folding>
             <element signature="e#51#70#0" expanded="true" />
@@ -344,16 +334,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tt.jpg">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/test_ver_4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="55" column="20" selection-end-line="97" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/paper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-770">
-          <caret line="33" column="24" lean-forward="true" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="31" />
+        <state relative-caret-position="648">
+          <caret line="93" column="8" lean-forward="true" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="8" />
           <folding>
             <element signature="e#1#20#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Go.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
