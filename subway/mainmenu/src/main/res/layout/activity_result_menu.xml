@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".resultMenu">
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="411dp"
+        android:layout_height="96dp"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="149dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="413dp"
+        android:layout_height="54dp"
+        android:text="복잡도"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="53dp" />
+</android.support.constraint.ConstraintLayout>
