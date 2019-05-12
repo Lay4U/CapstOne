@@ -6,20 +6,61 @@
     android:layout_height="match_parent"
     tools:context=".resultMenu">
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="411dp"
-        android:layout_height="96dp"
-        android:ems="10"
-        android:inputType="number"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="149dp" />
+    <TextView
+        android:id="@+id/StartStation"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="73dp"
+        android:layout_marginEnd="157dp"
+        android:layout_marginRight="157dp"
+        android:layout_marginBottom="493dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toStartOf="@+id/EndStation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="413dp"
-        android:layout_height="54dp"
-        android:text="복잡도"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="53dp" />
+        android:id="@+id/EndStation"
+        android:layout_width="0dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginBottom="60dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/StationFlow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/StartStation"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/StationFlow"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="26dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/ComplexFlow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EndStation" />
+
+    <TextView
+        android:id="@+id/ComplexFlow"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="184dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/StationFlow" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="57dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/StartStation" />
 </android.support.constraint.ConstraintLayout>
