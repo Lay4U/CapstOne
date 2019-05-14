@@ -84,15 +84,3 @@ plt.show()
 print(mean_squared_error(y_test, p))
 # plt.clf()
 
-
-
-# In[55]:
-
-
-
-
-# In[ ]:
-
-
-
-
