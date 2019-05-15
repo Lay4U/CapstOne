@@ -20,7 +20,7 @@ df = pd.read_csv('dataset.csv')
 del df['Unnamed: 0']
 
 s = df['name']
-s = list(set(s))
+s = list(sorted(set(s)))
 
 def create_dataset(signal_data, look_back=1):
     dataX, dataY = [], []
@@ -30,8 +30,8 @@ def create_dataset(signal_data, look_back=1):
     return np.array(dataX), np.array(dataY)
 
 look_back = 20
-# data1 = df[df['name']==s[0]]
-data1 = df[df['name']=='서울역(150)']
+data1 = df[df['name']==s[0]]
+# data1 = df[df['name']=='서울역(150)']
 print(data1)
 data = data1['a']
 #     data = data.value
@@ -51,22 +51,22 @@ x_test, y_test = create_dataset(test, look_back)
 
 x_train = np.reshape(x_train, (x_train.shape[0], x_train.shape[1], 1))
 x_test = np.reshape(x_test, (x_test.shape[0], x_test.shape[1], 1))
-# 모델 구성하기
 
+# 모델 구성하기
 model = Sequential()
 model.add(LSTM(512, input_shape=(None, 1), return_sequences=True))
 model.add(Dropout(0.3))
 
-model.add(LSTM(32, input_shape=(None, 1)))
+model.add(LSTM(512, input_shape=(None, 1)))
 model.add(Dropout(0.3))
 
 
 model.add(Dense(1))
 
-# 모델 학습과정 설정하기
+# 모델 학습
 model.compile(loss='mean_squared_error', optimizer='rmsprop', metrics=['accuracy'])
 model.summary()
-hist = model.fit(x_train, y_train, epochs=10, batch_size=16, verbose=2)
+hist = model.fit(x_train, y_train, epochs=10, batch_size=64, verbose=2)
 p = model.predict(x_test)
 
 
@@ -81,17 +81,27 @@ frequency = 2500  # Set Frequency To 2500 Hertz
 duration = 1000  # Set Duration To 1000 ms == 1 second
 winsound.Beep(frequency, duration)
 plt.show()
-# plt.clf()
 
+## 저장
+# model_json = model.to_json()
+# with open("s[0].json", "w") as json_file :
+#     json_file.write(model_json)
+# model.save_weights("s[0].h5")
+# print("Saved model to disk")
 
+## 불러오기
+# from keras.models import model_from_json
+# json_file = open("model.json", "r")
+# loaded_model_json = json_file.read()
+# json_file.close()
+# model = model_from_json(loaded_model_json)
+# model.load_weights("model.h5")
+# print("Loaded model from disk")
 
-# In[55]:
+# 불러오기 후 컴파일
+# model.compile(loss="binary_crossentropy", optimizer="rmsprop", metrics=['accuracy'])
 
-
-
-
-# In[ ]:
-
-
+# model evaluation
+# score = model.evaluate(X,Y,verbose=0)
 
 

@@ -35,3 +35,4 @@ data/temp.csv
 data/dataset_origin.zip
 gg.zip
 model.h5
+*.h5
