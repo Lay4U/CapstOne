@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/mystuffwindow"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:saveEnabled="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <Button
+                android:id="@+id/adding"
+                android:background="@drawable/addingstuff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|right"
+                android:text="" />
+
+            <TableLayout
+                android:id="@+id/adding_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="invisible">
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:background="@drawable/station_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:text=""
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/station_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="역 이름 입력"
+                        android:text=""
+                        android:textSize="15sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="분류\n예) 고속터미널B : B\n고속터미널 : 없음"
+                        android:textSize="15sp" />
+
+                    <NumberPicker
+                        android:id="@+id/station_section"
+                        android:layout_width="177dp"
+                        android:layout_height="wrap_content"
+                        android:hint="A, B, C, D, E 중 입력(없으면 없음)"
+                        android:textSize="15sp" />
+                </TableRow>
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="간단저장\n역 이름 상관없이 간단하게 저장" />
+
+                    <CheckBox
+                        android:id="@+id/easysaved"
+                        android:checked="false" />
+                </TableRow>
+                <TableRow
+
+                    android:layout_marginTop="10dp">
+                    <Button
+                        android:id="@+id/confirm_btn"
+                        android:background="@drawable/next_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_gravity="right"
+                        android:text=""/>
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/adding_content1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:stretchColumns="*"
+                android:visibility="invisible">
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:background="@drawable/box_num"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:text=""
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/box_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="보관함 번호 입력"
+                        android:inputType="number"
+                        android:text=""
+                        android:textSize="15sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        android:background="@drawable/using_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="20dp"
+                        android:text=""
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/using_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="2시간이면 2, 4시간이면 4"
+                        android:inputType="number"
+                        android:text=""
+                        android:textSize="15sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="20dp"
+                        android:text="알람 여부(30분 전)" />
+
+                    <CheckBox
+                        android:id="@+id/check_alarm"
+                        android:checked="false" />
+                </TableRow>
+
+                <TableRow>
+
+                    <Button
+                        android:id="@+id/confirm_btn1"
+                        android:background="@drawable/confirm_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_column="1"
+                        android:layout_gravity="right"
+                        android:text="" />
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/set_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:stretchColumns="*"
+                android:visibility="invisible">
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:background="@drawable/station_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="20dp"
+                        android:text=""
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/set_station_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="15sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:background="@drawable/box_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="20dp"
+                        android:text=""
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/set_box_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="15sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:background="@drawable/using_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="20dp"
+                        android:text=""
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/set_using_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="15sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:background="@drawable/startin_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="20dp"
+                        android:text=""
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/set_time_passby"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="15sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <Button
+                        android:id="@+id/finish_btn"
+                        android:background="@drawable/returnbuttn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_column="1"
+                        android:layout_gravity="right"
+                        android:text="" />
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/use"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:visibility="invisible" />
+
+
+        </FrameLayout>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

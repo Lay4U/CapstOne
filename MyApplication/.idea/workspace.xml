@@ -7,49 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd625006-2354-42cb-9155-c9ada1803f90" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/app/libs/armeabi-v7a/libtensorflow_demo.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/app/libs/armeabi-v7a/libtensorflow_inference.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/app/libs/libandroid_tensorflow_inference_java.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/app/src/main/assets/frozen_har.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/app/src/main/assets/frozen_model.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/app/src/main/ic_launcher-web.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/app/src/main/java/io/github/introml/activityrecognition/MainActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/app/src/main/java/io/github/introml/activityrecognition/TensorFlowClassifier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/app/src/main/res/values/styles.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/AndroidApp/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/checkpoint/checkpoint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/checkpoint/har.ckpt.data-00000-of-00001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/checkpoint/har.ckpt.index" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/frozen_har.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/history.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/human_activity_recognition.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../형래/TensorFlow-on-Android-for-Human-Activity-Recognition-with-LSTMs-master/predictions.p" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../형래/github/Sullivanway-master/Sullivanway/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +35,9 @@
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />

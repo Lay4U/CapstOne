@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background"
+    >
+
+    <AutoCompleteTextView
+        android:id="@+id/autoedit"
+        android:layout_width="280sp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/start"
+        android:layout_toEndOf="@+id/start"
+        android:layout_toRightOf="@+id/start"
+        android:bufferType="editable"
+        android:hint="출발역"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
+        android:completionHint="원하시는역 tap 하세요"
+        android:completionThreshold="1" />
+
+    <AutoCompleteTextView
+        android:hint="도착역"
+        android:id="@+id/autoedit1"
+        android:layout_width="280sp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_toRightOf="@+id/imageView"
+        android:bufferType="editable"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
+        android:completionHint="원하시는역 tap 하세요"
+        android:completionThreshold="1" />
+
+    <ImageButton
+        android:id="@+id/search"
+        android:layout_width="75sp"
+        android:layout_height="75sp"
+        android:layout_below="@+id/autoedit1"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/mglass" />
+
+    <ImageView
+        android:id="@+id/start"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="65dp"
+        android:background="@drawable/startimage" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:background="@drawable/endimage"
+        android:layout_below="@+id/autoedit"
+        />
+
+    <ImageButton
+        android:id="@+id/stbtalarmbt"
+        android:layout_width="75sp"
+        android:layout_height="75sp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/stendalarmbt"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/trans"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/search"
+        android:layout_marginTop="48dp"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/trans"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="20dp"
+        android:textSize="30dp" />
+
+    <ImageButton
+        android:id="@+id/rail"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:background="@drawable/rail"
+        android:visibility="invisible"
+        android:layout_alignTop="@+id/time"
+        android:layout_alignLeft="@+id/tx6"
+        android:layout_alignStart="@+id/tx6" />
+
+    <TextView
+        android:id="@+id/tx5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search"
+        android:layout_centerHorizontal="true"
+        android:text="막차탐색"
+        android:textColor="#ffffff"
+        />
+
+    <TextView
+        android:id="@+id/tx6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/rail"
+        android:text="경로보기"
+        android:visibility="invisible" />
+
+
+</RelativeLayout>

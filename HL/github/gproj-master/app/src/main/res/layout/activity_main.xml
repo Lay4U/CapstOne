@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.devaom.limjg.gproj.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/searchBar"
+        android:layout_height="56dp"
+        android:background="#FFB400">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 어떤 역을 가실 예정이신가요? "
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
+
+        <!-- android:background="@drawable/border"
+        >
+        -->
+        <!--
+        <TextView
+            android:id="@+id/densityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="[역명 검색창] (앱 이름 추천좀...)"
+            android:textAlignment="center"
+            android:gravity="center_vertical"
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp"/>
+        <EditText
+            android:id="@+id/densityMinus"
+            android:layout_height="match_parent"
+            android:text="1"
+            android:layout_marginLeft="200dp"
+            android:layout_width="50dp" />
+        <Button
+            android:id="@+id/densityPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="apply"
+            android:layout_marginLeft="300dp"/>
+        -->
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mainLayout"
+        android:layout_marginTop="?attr/actionBarSize">
+
+            <!--
+            <com.ssomai.android.scalablelayout.ScalableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:scale_base_width="400"
+                app:scale_base_height="200"
+                >
+
+                <com.devaom.limjg.gproj2.ImageViewTouchable
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/imageViewTouchable" />
+
+            </com.ssomai.android.scalablelayout.ScalableLayout>
+            -->
+
+        </FrameLayout>
+</RelativeLayout>

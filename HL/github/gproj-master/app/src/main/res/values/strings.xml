@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">GPROJ</string>
+    <string name="action_settings">Settings</string>
+    <string name="str_done">버튼</string>
+
+    <string name="client_id">fYSqBKpRBuAAsZJx7ozN</string>
+    <string name="client_secret">ipdaPqL0vl</string>
+    <string name="server_ip">52.79.161.10</string>
+    <string name="userid">testuser</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>

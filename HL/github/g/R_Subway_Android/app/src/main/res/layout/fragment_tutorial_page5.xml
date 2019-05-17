@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ImageView
+            android:layout_centerInParent="true"
+            android:id="@+id/splash"
+            android:src="@drawable/splash_tutorial_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp"/>
+
+        <com.dd.processbutton.iml.ActionProcessButton
+            android:layout_centerHorizontal="true"
+            android:id="@+id/btnSignIn"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:text="시작하기"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            android:layout_alignParentBottom="true"
+            />
+
+
+    </RelativeLayout>
+
+</LinearLayout>
