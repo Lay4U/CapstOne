@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0d9c2431-148a-4d71-bef1-b1028d4fa4d6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Metrobox/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/Metrobox/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Metrobox/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Metrobox/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Metrobox/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Metrobox/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Metrobox/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Metrobox/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gproj-master/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gproj-master/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gproj-master/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gproj-master/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gproj-master/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gproj-master/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gproj-master/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../gproj-master/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gproj-master/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../gproj-master/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gproj-master/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../gproj-master/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../subway-master/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../subway-master/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../subway-master/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../subway-master/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../subway-master/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../subway-master/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../subway-master/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../subway-master/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../subway-master/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../subway-master/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../subway-master/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../subway-master/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/app/src/main/java/com/example/test/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../test/app/src/main/java/com/example/test/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test2/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../test2/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficsubway-release.aar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../JM/N_build.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../JM/N_build.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SC/MySubwayProject/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SC/MySubwayProject/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SC/MySubwayProject/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SC/MySubwayProject/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SC/MySubwayProject/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Metrobox/build.gradle">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="260" />
+    <option name="y" value="20" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="2018seoul-53-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2018seoul-53-master" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="2018seoul-53-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2018seoul-53-master" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="2018seoul-53-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2018seoul-53-master" type="462c0819:PsiDirectoryNode" />
+              <item name="Metrobox" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../2016seoul-22-master/R_Subway_Android" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0d9c2431-148a-4d71-bef1-b1028d4fa4d6" name="Default Changelist" comment="" />
+      <created>1558105879194</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1558105879194</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" visible="true" weight="0.32982087" />
+      <window_info id="Structure" side_tool="true" />
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="Resources Explorer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Captures" order="0" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="TODO" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Palette&#9;" />
+    </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Metrobox/build.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+  </component>
+</project>
