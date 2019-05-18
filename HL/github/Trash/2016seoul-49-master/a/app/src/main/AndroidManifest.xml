@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.androidtown.home" >
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_OWNER_DATA" />
+    <uses-permission android:name="android.permission.READ_OWNER_DATA" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/app_icon2"
+        android:label="집갈시간이야"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity android:name=".LodingActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".TmapOpen" />
+        <activity android:name=".TmapOpen2" />
+
+        <activity android:name=".selectStartEnd" />
+        <activity android:name=".onPressBell" />
+        <activity android:name=".offPressBell" />
+
+        <receiver
+            android:name=".AlarmReceiver"
+            android:process=":remote" />
+        <receiver
+            android:name=".AlarmReceiver2"
+            android:process=":remote" />
+
+        <activity android:name=".DialogActivity" />
+        <activity android:name=".DialogActivity2" />
+        <activity android:name=".select_LastBtn" />
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".DeveloperInformation" />
+
+        <service
+            android:name=".MainService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+
+        <activity android:name=".SettingDes"
+            android:theme="@style/Theme.AppCompat.Dialog"/>
+    </application>
+
+</manifest>

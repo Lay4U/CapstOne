@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">R_Subway_Android</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="tutorial_button_text">시작하기</string>
+    <string name="action_settings">Settings</string>
+
+</resources>

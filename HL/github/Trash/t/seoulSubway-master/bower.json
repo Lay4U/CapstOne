@@ -1,0 +1,24 @@
+{
+  "name": "seoulSubway",
+  "homepage": "https://github.com/rinuel/seoulSubway",
+  "authors": [
+    "rinuel <rinuel@naver.com>"
+  ],
+  "description": "seoulSubWay with d3",
+  "main": "index.html",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "d3": "~3.5.12",
+    "jquery": "~2.2.0",
+    "jquery-ui": "~1.11.4",
+    "d3-context-menu": "*",
+    "JDWidgets": "*"
+  },
+  "devDependencies": {
+    "d3": "~3.5.12"
+  }
+}
