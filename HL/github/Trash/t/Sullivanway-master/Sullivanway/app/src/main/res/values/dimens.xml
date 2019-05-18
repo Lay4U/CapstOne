@@ -1,0 +1,63 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="fab_size">72dp</dimen>
+    <dimen name="selected_stn_text_size">22sp</dimen>
+    <dimen name="main_elevation">20dp</dimen>
+
+    <!-- activity_favorite_route.xmlte.xml -->
+    <dimen name="fav_margin">10dp</dimen>
+    <dimen name="fav_text_size">20sp</dimen>
+
+    <!-- activity_route_guidance_pager.xml, item_route_subway_section.xml item_walk_line.xml -->
+    <dimen name="route_guidance_margin">5dp</dimen>
+    <dimen name="route_guidance_padding">15dp</dimen>
+    <dimen name="route_guidance_text_size">18sp</dimen>
+    <dimen name="route_guidance_walk_padding">10dp</dimen>
+
+    <!-- activity_transfer_map_list.xml -->
+    <dimen name="trans_map_title_size">22sp</dimen>
+    <dimen name="trans_map_text_size">18sp</dimen>
+
+    <!-- dialog_station_menu.xml -->
+    <dimen name="stn_menu_margin">5dp</dimen>
+    <dimen name="stn_menu_padding">8dp</dimen>
+    <dimen name="stn_menu_title_size">24sp</dimen>
+    <dimen name="stn_menu_text_size">22sp</dimen>
+
+    <!-- activity_stn_info_pager.xml -->
+    <dimen name="stn_info_margin">10dp</dimen>
+    <dimen name="stn_info_padding">22dp</dimen>
+    <dimen name="map_height">300dp</dimen>
+    <dimen name="stn_info_title_size">18sp</dimen>
+    <dimen name="stn_info_text_size">16sp</dimen>
+    <dimen name="stn_info_map_padding">8dp</dimen>
+    <dimen name="stn_info_map_text_size">22sp</dimen>
+    <dimen name="stn_info_map_elevation">20dp</dimen>
+    <dimen name="stn_info_title_padding">8dp</dimen>
+
+    <!-- item_station.xml -->
+    <dimen name="item_station_margin">10dp</dimen>
+
+    <!-- item_transfer_map.xml -->
+    <dimen name="item_transfer_map_margin">2dp</dimen>
+
+    <!-- item_setting -->
+    <dimen name="item_setting_margin">10dp</dimen>
+
+    <!-- item_timetable.xml -->
+    <dimen name="timetable_margin">10dp</dimen>
+    <dimen name="timetable_text_mid_size">18sp</dimen>
+    <dimen name="timetable_text_small_size">16sp</dimen>
+    <dimen name="timetable_item_padding">5dp</dimen>
+
+    <!-- activity_settings.xml -->
+    <dimen name="settings_text_size">22sp</dimen>
+    <dimen name="settings_padding">8dp</dimen>
+    <dimen name="settings_btn_text_size">16sp</dimen>
+    <dimen name="settings_elevation">20dp</dimen>
+
+    <!-- activity dialog -->
+    <dimen name="dialog_margin">5dp</dimen>
+    <dimen name="dialog_margin_bottom">10dp</dimen>
+
+</resources>
