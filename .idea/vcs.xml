@@ -4,5 +4,7 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/HL/test2/examples" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/HL/tf/examples" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/HL/trash/test2/examples" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/HL/trash/tf/examples" vcs="Git" />
   </component>
 </project>

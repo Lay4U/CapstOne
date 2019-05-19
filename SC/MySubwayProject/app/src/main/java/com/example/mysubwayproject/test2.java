@@ -15,5 +15,6 @@ public class test2 extends AppCompatActivity {
         }
         TextView textView = (TextView) findViewById(R.id.textView) ;
         textView.setText(StationNM + " 출력값");
+        string = https://api.odsay.com/v1/eDieEbNzQwonBt3ajgZQqAjhIcDlQSCAqpmRhLMtETA/searchStation?lang=0&stationName=강남
     }
 }
