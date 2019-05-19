@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">subway</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <string name="section_number1">현재 위치 역</string>
+    <string name="section_number2">역 선택</string>
+    <string name="section_number3">지도보기</string>
+
+    <string name="dbloading">DB 생성중...</string>
+</resources>

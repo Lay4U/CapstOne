@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+
+            >
+
+            <TextView
+                android:id="@+id/Previous_Station"
+                android:layout_width="100dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="29dp"
+                android:layout_toLeftOf="@id/centertext"
+                android:background="@drawable/infoa"
+                android:gravity="center"
+                android:text="이전"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/Next_Station"
+                android:layout_width="100dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="29dp"
+                android:layout_toRightOf="@id/centertext"
+                android:background="@drawable/infoc"
+                android:gravity="center"
+                android:text="다음"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/centertext"
+                android:layout_width="160dp"
+                android:layout_height="59dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/infob"
+                android:gravity="center"
+                android:text="현재역"
+                android:textColor="#000000"
+                android:textSize="20dp"
+
+                android:textStyle="bold" />
+<!-- _________________ -->
+            <TextView
+                android:id="@+id/Downtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="하행선"
+                android:textColor="@color/colorRed"
+                android:textSize="20dp"
+                android:layout_marginTop="100dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/Down1text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Downtitle"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="13dp"
+                android:text="1번 열차: " />
+            <TextView
+                android:id="@+id/Down2text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Down1text"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="13dp"
+                android:text="2번 열차: " />
+            <TextView
+                android:id="@+id/Down1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/Down1text"
+                android:layout_below="@id/Downtitle"
+                android:layout_marginTop="5dp"
+                android:textColor="#000000"
+                android:textSize="13dp"
+
+                android:text="하행1 몇분 후" />
+
+            <TextView
+                android:id="@+id/Down2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/Down2text"
+                android:layout_below="@id/Down1text"
+                android:layout_marginTop="5dp"
+                android:textColor="#000000"
+                android:textSize="13dp"
+                android:text="하행2 몇분 후" />
+
+
+            <HorizontalScrollView
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@id/Down2"
+                android:layout_marginTop="5dp">
+
+                <RelativeLayout
+                    android:layout_width="2000dp"
+                    android:layout_height="200dp">
+
+                    <ImageView
+                        android:layout_width="360dp"
+                        android:layout_height="180dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/traina" />
+
+                    <ImageView
+                        android:layout_width="1080dp"
+                        android:layout_height="180dp"
+                        android:layout_marginLeft="370dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/trainb" />
+
+                    <ImageView
+                        android:layout_width="360dp"
+                        android:layout_height="180dp"
+                        android:layout_marginLeft="1450dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/trainc" />
+
+                    <ImageView
+                        android:id="@+id/platb1"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginLeft="350dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/trainwindow" />
+
+
+                    <ImageView
+                        android:id="@+id/platb2"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_toRightOf="@id/platb1"
+                        android:background="@drawable/trainwindow" />
+
+                    <ImageView
+                        android:id="@+id/platb3"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_toRightOf="@id/platb2"
+                        android:background="@drawable/trainwindow" />
+
+                    <ImageView
+                        android:id="@+id/platb4"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_toRightOf="@id/platb3"
+                        android:background="@drawable/trainwindow" />
+
+                    <ImageView
+                        android:id="@+id/platb5"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_toRightOf="@id/platb4"
+                        android:background="@drawable/trainwindow" />
+
+                    <ImageView
+                        android:id="@+id/platb6"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_toRightOf="@id/platb5"
+                        android:background="@drawable/trainwindow" />
+
+                    <ImageView
+                        android:id="@+id/platb7"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_toRightOf="@id/platb6"
+                        android:background="@drawable/trainwindow" />
+
+                    <ImageView
+                        android:id="@+id/platb8"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_toRightOf="@id/platb7"
+                        android:background="@drawable/trainwindow" />
+
+                    <TextView
+
+                        android:id="@+id/plattxt"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/platb1"
+                        android:layout_marginLeft="350dp"
+                        android:text="1번칸"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:id="@+id/Information"
+                        android:layout_marginLeft="350dp"
+                        android:padding="10dp"
+                        android:layout_width="115dp"
+                        android:layout_height="110dp"
+                        android:gravity="center|left"
+                        android:text="테스트~~~!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+                        android:layout_above="@id/plattxt"
+                        android:typeface="sans"
+                        android:textSize="15dp"/>
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/platb2"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@id/platb1"
+                        android:text="2번칸"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/platb3"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@id/platb2"
+                        android:text="3번칸"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/platb4"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@id/platb3"
+                        android:text="4번칸"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/platb5"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@id/platb4"
+                        android:text="5번칸"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/platb6"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@id/platb5"
+                        android:text="6번칸"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/platb7"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@id/platb6"
+                        android:text="7번칸"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/platb8"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@id/platb7"
+                        android:text="8번칸"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/Uptitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view1"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:text="상행선"
+                android:textColor="@color/colorRed"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/Up1text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Uptitle"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="13dp"
+                android:text="1번 열차: " />
+
+            <TextView
+                android:id="@+id/Up2text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Up1text"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:text="2번 열차: "
+                android:textColor="#000000"
+                android:textSize="13dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/Up1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/Up1text"
+                android:layout_below="@id/Uptitle"
+                android:layout_marginTop="5dp"
+                android:textColor="#000000"
+                android:textSize="13dp"
+                android:text="하행1 몇분 후" />
+
+            <TextView
+                android:id="@+id/Up2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/Up2text"
+                android:layout_below="@id/Up1text"
+                android:layout_marginTop="5dp"
+                android:textColor="#000000"
+                android:textSize="13dp"
+                android:text="하행2 몇분 후" />
+
+            <HorizontalScrollView
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@id/Up2"
+                android:layout_marginTop="5dp">
+
+                <RelativeLayout
+                    android:layout_width="2000dp"
+                    android:layout_height="200dp">
+
+                    <ImageView
+                        android:layout_width="360dp"
+                        android:layout_height="180dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/traina" />
+
+                    <ImageView
+                        android:layout_width="1080dp"
+                        android:layout_height="180dp"
+                        android:layout_marginLeft="370dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/trainb" />
+
+                    <ImageView
+                        android:layout_width="360dp"
+                        android:layout_height="180dp"
+                        android:layout_marginLeft="1450dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/trainc" />
+
+                    <ImageView
+                        android:id="@+id/plat1"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginLeft="350dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/trainwindow" />
+
+                    <ImageView
+                        android:id="@+id/plat2"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_toRightOf="@id/plat1"
+                        android:background="@drawable/trainwindow" />
+
+                    <ImageView
+                        android:id="@+id/plat3"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_toRightOf="@id/plat2"
+                        android:background="@drawable/trainwindow" />
+
+                    <ImageView
+                        android:id="@+id/plat4"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_toRightOf="@id/plat3"
+                        android:background="@drawable/trainwindow" />
+
+                    <ImageView
+                        android:id="@+id/plat5"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_toRightOf="@id/plat4"
+                        android:background="@drawable/trainwindow" />
+
+                    <ImageView
+                        android:id="@+id/plat6"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_toRightOf="@id/plat5"
+                        android:background="@drawable/trainwindow" />
+
+                    <ImageView
+                        android:id="@+id/plat7"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_toRightOf="@id/plat6"
+                        android:background="@drawable/trainwindow" />
+
+                    <ImageView
+                        android:id="@+id/plat8"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_toRightOf="@id/plat7"
+                        android:background="@drawable/trainwindow" />
+
+                    <TextView
+                        android:id="@+id/plattxt2"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/plat1"
+                        android:layout_marginLeft="350dp"
+                        android:text="1번칸"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:id="@+id/Information2"
+                        android:layout_marginLeft="350dp"
+                        android:padding="10dp"
+                        android:gravity="center|left"
+                        android:layout_width="115dp"
+                        android:layout_height="110dp"
+                        android:text="테스트~~~!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+                        android:layout_above="@id/plattxt2"
+                        android:typeface="sans"
+                        android:textSize="15dp"/>
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/plat2"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@id/plat1"
+                        android:text="2번칸"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/plat3"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@id/plat2"
+                        android:text="3번칸"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/plat4"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@id/plat3"
+                        android:text="4번칸"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/plat5"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@id/plat4"
+                        android:text="5번칸"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/plat6"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@id/plat5"
+                        android:text="6번칸"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/plat7"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@id/plat6"
+                        android:text="7번칸"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/plat8"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@id/plat7"
+                        android:text="8번칸"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </HorizontalScrollView>
+
+
+        </RelativeLayout>
+</ScrollView>
+
+
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

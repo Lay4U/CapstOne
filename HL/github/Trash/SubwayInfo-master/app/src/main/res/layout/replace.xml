@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_width="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/ScrollView"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/app_bar_main"
+    android:layout_gravity="center"
+    >
+
+    <HorizontalScrollView
+        android:id="@+id/horScrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        >
+
+        <RelativeLayout
+            android:id="@+id/SubLinear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/seoulsubway"
+
+            android:orientation="vertical"
+
+            >
+            <!--성신여대-->
+            <Button
+                android:background="@drawable/stationbtn"
+                android:id="@+id/btn1"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="400dp"
+                android:layout_marginTop="85dp"
+                android:text="성신여대입구"
+                android:textSize="0dp"/>
+
+            <!--한성대-->
+            <Button
+                android:background="@drawable/stationbtn"
+                android:id="@+id/btn2"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="400dp"
+                android:layout_marginTop="105dp"
+                android:text="한성대입구"
+                android:textSize="0dp"
+                />
+            <!--혜화-->
+            <Button
+                android:background="@drawable/stationbtn"
+                android:id="@+id/btn3"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="400dp"
+                android:layout_marginTop="125dp"
+                android:text="혜화"
+                android:textSize="0dp"
+                 />
+            <!--동대문-->
+            <Button
+                android:background="@drawable/stationbtn"
+                android:id="@+id/btn4"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="400dp"
+                android:layout_marginTop="148dp"
+                android:text="동대문"
+                android:textSize="0dp"
+
+               />
+
+
+        </RelativeLayout>
+
+    </HorizontalScrollView>
+</ScrollView>
+    </RelativeLayout>
