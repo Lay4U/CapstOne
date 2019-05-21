@@ -11,6 +11,10 @@ import android.widget.TimePicker;
 
 import java.util.Calendar;
 
+/*
+ * 시간을 선택하는 화면을 구성하는 소스코드 입니다!
+ * 뒤로가기 키를 구현해야 합니다.
+ * */
 
 public class TimeSetter extends AppCompatActivity implements View.OnClickListener, TimePicker.OnTimeChangedListener{
 
@@ -24,7 +28,7 @@ public class TimeSetter extends AppCompatActivity implements View.OnClickListene
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_time_picker);
+        setContentView(R.layout.activity_time_setter);
         if (getIntent() != null && getIntent().getStringExtra("StartStationNM") != null) {
             this.StartStationNM = getIntent().getStringExtra("StartStationNM");
         }

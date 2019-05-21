@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-
+/*
+ * 지도을 작성하는 소스코드 입니다! 절대 건드리지 마시오.
+ * */
 public class MapMaker extends AppCompatActivity {
 
     public WebView lineMapWebview;
@@ -24,7 +26,6 @@ public class MapMaker extends AppCompatActivity {
         this.lineMapWebview.getSettings().setSupportZoom(true);
         this.lineMapWebview.getSettings().setDisplayZoomControls(false);
         this.lineMapWebview.getSettings().setDefaultTextEncodingName("UTF-8");
-
         this.lineMapWebview.loadUrl("file:///android_asset/mSeoul_Subway.html");
     }
 }

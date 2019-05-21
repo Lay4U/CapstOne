@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.view.View;
 import android.widget.TextView;
-
+/*
+* 도착역을 선택하는 화면을 구성하는 소스코드 입니다!
+* */
 public class EndStation extends MapMaker {
 
     private ImageView btnBackSubway;
@@ -47,7 +49,7 @@ public class EndStation extends MapMaker {
                 month,
                 day,
                 hour,
-                minute);
+                minute);// 역 선택시 정보전달
         super.lineMapWebview.addJavascriptInterface(this.mWebViewInterface, "Android");
     }
 }

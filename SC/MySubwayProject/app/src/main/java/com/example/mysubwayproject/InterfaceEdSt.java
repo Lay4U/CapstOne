@@ -3,11 +3,12 @@ package com.example.mysubwayproject;
 import android.app.Activity;
 import android.content.Intent;
 import android.webkit.JavascriptInterface;
-
+/*
+ * 도착역선택 후 정보를 전달하기 위한 소스코드 입니다!
+ * */
 public class InterfaceEdSt {
     private Activity mContext;
     private String startStationNM;
-    private String endStationNM;
     private int year;
     private int month;
     private int day;
