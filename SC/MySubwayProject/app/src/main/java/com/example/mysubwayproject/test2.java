@@ -15,6 +15,11 @@ public class test2 extends AppCompatActivity {
         }
         TextView textView = (TextView) findViewById(R.id.textView) ;
         textView.setText(StationNM + " 출력값");
-        string = https://api.odsay.com/v1/eDieEbNzQwonBt3ajgZQqAjhIcDlQSCAqpmRhLMtETA/searchStation?lang=0&stationName=강남
+        //쿼리날리고 = https://api.odsay.com/v1/eDieEbNzQwonBt3ajgZQqAjhIcDlQSCAqpmRhLMtETA/searchStation?lang=0&stationName=StationNM
+        //사용자에게 시간, 도착역받고
+        //출발역, 도착역 경로받아서
+        //각 역의 시간을 모델에 던진다.
+        //받은 값을 시각화해서 뿌려준다.
+
     }
 }
