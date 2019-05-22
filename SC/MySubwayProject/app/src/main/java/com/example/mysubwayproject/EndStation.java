@@ -35,14 +35,6 @@ public class EndStation extends MapMaker {
     }
 
     private void initView() {
-        //this.textPageNM = (TextView)findViewById(R.id.showTitle);
-        this.btnBackSubway = (ImageView)findViewById(R.id.my_btn_back_subway);
-        this.btnBackSubway.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View view) {
-                EndStation.this.finish();
-            }
-        });
         this.mWebViewInterface = new InterfaceEdSt(this,
                 startStationNM,
                 year,

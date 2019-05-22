@@ -35,12 +35,12 @@ public class InterfaceEdSt {
     public void showSubwayInfo(String station){
         Intent intent = new Intent(this.mContext, ResultView.class);
         intent.putExtra("StartStationNM", startStationNM);
+        intent.putExtra("EndStationNM", station);
         intent.putExtra("Year", year);
         intent.putExtra("Month", month);
         intent.putExtra("Day", day);
         intent.putExtra("Hour", hour);
         intent.putExtra("Minute", minute);
-        intent.putExtra("EndStationNM", station);
         this.mContext.startActivity(intent);
     }
 }
