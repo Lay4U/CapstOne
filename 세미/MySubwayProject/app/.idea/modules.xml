@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../MySubwayProject.iml" filepath="$PROJECT_DIR$/../MySubwayProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../SDK_release_v1.0/SDK_release_v1.0.iml" filepath="$PROJECT_DIR$/../SDK_release_v1.0/SDK_release_v1.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app.iml" filepath="$PROJECT_DIR$/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../trafficsubway-release/trafficsubway-release.iml" filepath="$PROJECT_DIR$/../trafficsubway-release/trafficsubway-release.iml" />
+    </modules>
+  </component>
+</project>
