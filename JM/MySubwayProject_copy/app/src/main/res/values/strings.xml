@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MySubwayProject</string>
+    <string name="odsay_key">eDieEbNzQwonBt3ajgZQqAjhIcDlQSCAqpmRhLMtETA</string>
+    <string name="title_activity_result_view">ResultView</string>
+</resources>
