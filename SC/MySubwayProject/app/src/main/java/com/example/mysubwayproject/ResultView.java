@@ -1,7 +1,10 @@
 package com.example.mysubwayproject;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import org.json.JSONObject;
 
@@ -16,7 +19,7 @@ import com.odsay.odsayandroidsdk.OnResultCallbackListener;
 /*
  * 최종 화면을 구성할 예정인 소스코드 입니다!
  * */
-public class ResultView extends AppCompatActivity {
+public class ResultView extends AppCompatActivity implements View.OnClickListener {
     String startStationNM;
     private String StationID = "null";
     private String endStationNM;
@@ -28,6 +31,7 @@ public class ResultView extends AppCompatActivity {
     private JSONObject jsonObject;
     private TextView tv_data2;
     private ODsayService odsayService;
+    private Button btnSubway;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +46,19 @@ public class ResultView extends AppCompatActivity {
         this.day = getIntent().getIntExtra("Day", day);
         this.hour = getIntent().getIntExtra("Hour", hour);
         this.minute = getIntent().getIntExtra("Minute", minute);
+
+        TextView textPageNM = (TextView)findViewById(R.id.start_and_end);
+        textPageNM.setText(startStationNM + "    "+   endStationNM);
         findStationID();
+
+        btnSubway = (Button)findViewById(R.id.complete);
+        btnSubway.setOnClickListener(this);
+    }
+    @Override
+    public void onClick(View v){
+        this.finish();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
     protected void findStationID(){
@@ -61,7 +77,7 @@ public class ResultView extends AppCompatActivity {
 
                 String stationName = "";
                 String stationID = "";
-                for (int i = 0; i < stationArray.size(); i++) {
+                for (int i = 0; i < stationArray.size(); i++) {//수정필요!!!!
                     JsonObject object = (JsonObject) stationArray.get(i);
                     stationName = object.get("stationName").getAsString();
                     stationID = object.get("stationID").getAsString();

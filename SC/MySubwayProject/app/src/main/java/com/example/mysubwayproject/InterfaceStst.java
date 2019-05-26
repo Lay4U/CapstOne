@@ -19,6 +19,7 @@ public class InterfaceStst {
     public void showSubwayInfo(String station){
         Intent intent = new Intent(this.mContext, TimeSetter.class);
         intent.putExtra("StartStationNM", station);
+        this.mContext.finish();
         this.mContext.startActivity(intent);
     }
 }
