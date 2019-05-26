@@ -1,6 +1,7 @@
 package com.example.mysubwayproject;
 
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,16 @@ import com.odsay.odsayandroidsdk.API;
 import com.odsay.odsayandroidsdk.ODsayData;
 import com.odsay.odsayandroidsdk.ODsayService;
 import com.odsay.odsayandroidsdk.OnResultCallbackListener;
+import com.opencsv.CSVReader;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 /*
  * 최종 화면을 구성할 예정인 소스코드 입니다!
@@ -28,11 +39,12 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
     private int day;
     private int hour;
     private int minute;
-    private float predict = 0;
+    private float predict;
     private JSONObject jsonObject;
     private TextView tv_data2;
     private ODsayService odsayService;
     private Button btnSubway;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,22 +128,20 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
                 //JsonArray driveInfoArray = (JsonArray) driveInfoSetObj.get("driveInfo");
                 //JsonArray exChangeInfoArray = (JsonArray) exChangeInfoSetObj.get("exChangeInfo");
                 JsonArray stationArray = (JsonArray) stationSetObj.get("stations");
-                model m = new model();
 
                 String station_in_course = "startStation: " + startStationNM + " endStation: " + endStationNM
                         + "\nDate: " + year + "년 " +  month + "월 " +  day + "일"
-                        + "\nTime: " + hour + "시 " + minute + "분\n";
+                        + "\nTime: " + hour + "시 " + minute + "분\n";;
                 int current_Hour = hour;
                 int current_Minute = minute;
-
                 for (int i = 0; i < stationArray.size(); i++) {
                     JsonObject object = (JsonObject) stationArray.get(i);
                     String current_Station = object.get("startName").getAsString();
-                    try{
-                        predict = m.modelPredict(current_Station, day, current_Hour, current_Minute);
+                    try {
+                        predict = modelPredict(current_Station, day, current_Hour, current_Minute);
                     }
-                    catch(Exception e){
-                        System.out.println("db에 없는 역");
+                    catch (Exception e){
+                        predict = -1;
                     }
                     station_in_course = station_in_course
                             + "\nStation: " + current_Station
@@ -145,17 +155,17 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
                         current_Minute %= 60;
                     }
                 }
-                try{
-                    predict = m.modelPredict(endStationNM, day, current_Hour, current_Minute);
+                try {
+                    predict = modelPredict(endStationNM, day, current_Hour, current_Minute);
                 }
-                catch(Exception e){
-                    System.out.println("db에 없는 역");
+                catch (Exception e){
+                    predict = -1;
                 }
                 station_in_course = station_in_course
                         + "\nStation: " + endStationNM
                         + "\nDate: " + year + "년 " +  month + "월 " +  day + "일"
-                        + "\nTime: " + current_Hour + "시 " + current_Minute + "분\n"
-                        + "\n예측값" + predict;
+                        + "\nTime: " + current_Hour + "시 " + current_Minute + "분"
+                        + "\n예측값" + predict + "\n";
 
                 tv_data2.setText(station_in_course);
 
@@ -169,5 +179,55 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
         };
 
         odsayService.requestSubwayPath("1000", startStationID, endStationID,"1", onResultCallbackListener);
+    }
+
+    public float modelPredict(String StationNM, int day, int hour, int minute)
+    {
+        AssetManager assetManager = getApplication().getAssets();
+        ArrayList<String[]> records = new ArrayList<String[]>();
+        ArrayList<Integer> model_list = new ArrayList<Integer>();
+        try {
+
+            InputStreamReader is = new InputStreamReader(assetManager.open(StationNM+".csv"));
+            BufferedReader br = new BufferedReader(is);
+
+            CSVReader reader = new CSVReader(br);
+            for(String[] data : reader.readAll()){
+                int val = new BigDecimal(data[0]).intValue();
+                model_list.add(val);
+            }
+        } catch (IOException e) {
+            System.out.println("can not found .csv");
+        }
+
+
+        int[] model = new int[model_list.size()];
+        for (int i = 0; i < model.length; i++) {
+            model[i] = model_list.get(i).intValue();
+        }
+
+        int x1 = day * 20 + hour;
+        int x2 = day * 20 + hour + 1;
+        float y1 = model[x1];
+        float y2 = model[x2];
+
+
+        float a = (y2 - y1); //(x2-x1)은 항상1
+        float b = y2 - a;
+
+        // 24분에 해당하는점을 구한다.
+
+        float x = (float) (1.0 / 60.0 * minute); // input은 24를 받는다.
+        float y = a * x + b;
+        System.out.println("x1 :" + x1);
+        System.out.println("x2 :" + x2);
+        System.out.println("y1 :" + y1);
+        System.out.println("y2 :" + y2);
+        System.out.println("a :" + a);
+        System.out.println("b :" + b);
+        System.out.println("x :" + x);
+        System.out.println("y :" + y);
+
+        return y;
     }
 }

@@ -26,9 +26,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, StartStation.class);
         startActivity(intent);
     }
-
 //CSV파일 읽기 테스트
-    //시작역받아서 예측까지
     void readAll() {
         AssetManager assetManager = getApplication().getAssets();
         try {
@@ -43,5 +41,6 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException e) {
             System.out.println("can not found .csv");
         }
+
     }
 }
