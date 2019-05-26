@@ -2,31 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe42bdf6-016a-4d89-aa7b-1ff292f674e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/python/data/generate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/predict_csv/gogo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HL/MySubwayProject/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/HL/MySubwayProject/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HL/MySubwayProject/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/HL/MySubwayProject/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HL/MySubwayProject/app/src/main/java/com/example/mysubwayproject/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/HL/MySubwayProject/app/src/main/java/com/example/mysubwayproject/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HL/MySubwayProject/app/src/main/java/com/example/mysubwayproject/test2.java" beforeDir="false" afterPath="$PROJECT_DIR$/HL/MySubwayProject/app/src/main/java/com/example/mysubwayproject/test2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HL/MySubwayProject/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/HL/MySubwayProject/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HL/MySubwayProject/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/HL/MySubwayProject/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HL/MySubwayProject/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/HL/MySubwayProject/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HL/MySubwayProject/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/HL/MySubwayProject/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HL/MySubwayProject/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/HL/MySubwayProject/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HL/trash/tf/examples/lite/examples/image_classification/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/HL/trash/tf/examples/lite/examples/image_classification/android/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HL/trash/tf/examples/lite/examples/image_classification/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/HL/trash/tf/examples/lite/examples/image_classification/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SC/MySubwayProject/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SM/새 텍스트 문서.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/data/Untitled.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/python/data/Untitled.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/preprocessing-Copy1.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/python/preprocessing-Copy1.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/preprocessing.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/python/preprocessing.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/test_ver_3-Copy1_my.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/python/test_ver_3-Copy1_my.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/test_ver_4.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/python/test_ver_4.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/test_ver_5-Copy1.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/python/test_ver_5-Copy1.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/test_ver_3-Copy1_my2.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/python/test_ver_3-Copy1_my2.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python/tt.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/python/tt.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/세미/MySubwayProject/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/세미/MySubwayProject/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/세미/MySubwayProject/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/세미/MySubwayProject/.idea/vcs.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,8 +56,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/python/predict_csv/gogo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="767">
-              <caret line="140" column="19" selection-start-line="140" selection-start-column="19" selection-end-line="140" selection-end-column="19" />
+            <state relative-caret-position="455">
+              <caret line="56" column="9" lean-forward="true" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
               <folding>
                 <element signature="e#2#21#0" expanded="true" />
               </folding>
@@ -351,10 +331,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="0" width="1936" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19914803" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.19914803" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32937366" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50106496" side_tool="true" weight="0.32937366" />
@@ -362,7 +343,7 @@
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" />
       <window_info anchor="bottom" id="Version Control" order="5" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49893504" visible="true" weight="0.32829374" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.49893504" visible="true" weight="0.32829374" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.39956802" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -468,8 +449,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/python/predict_csv/gogo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="767">
-          <caret line="140" column="19" selection-start-line="140" selection-start-column="19" selection-end-line="140" selection-end-column="19" />
+        <state relative-caret-position="455">
+          <caret line="56" column="9" lean-forward="true" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
           <folding>
             <element signature="e#2#21#0" expanded="true" />
           </folding>
