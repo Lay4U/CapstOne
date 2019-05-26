@@ -28,6 +28,7 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
     private int day;
     private int hour;
     private int minute;
+    private float predict = 0;
     private JSONObject jsonObject;
     private TextView tv_data2;
     private ODsayService odsayService;
@@ -115,20 +116,28 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
                 //JsonArray driveInfoArray = (JsonArray) driveInfoSetObj.get("driveInfo");
                 //JsonArray exChangeInfoArray = (JsonArray) exChangeInfoSetObj.get("exChangeInfo");
                 JsonArray stationArray = (JsonArray) stationSetObj.get("stations");
+                model m = new model();
 
                 String station_in_course = "startStation: " + startStationNM + " endStation: " + endStationNM
                         + "\nDate: " + year + "년 " +  month + "월 " +  day + "일"
-                        + "\nTime: " + hour + "시 " + minute + "분\n";;
+                        + "\nTime: " + hour + "시 " + minute + "분\n";
                 int current_Hour = hour;
                 int current_Minute = minute;
+
                 for (int i = 0; i < stationArray.size(); i++) {
                     JsonObject object = (JsonObject) stationArray.get(i);
                     String current_Station = object.get("startName").getAsString();
-
+                    try{
+                        predict = m.modelPredict(current_Station, day, current_Hour, current_Minute);
+                    }
+                    catch(Exception e){
+                        System.out.println("db에 없는 역");
+                    }
                     station_in_course = station_in_course
                             + "\nStation: " + current_Station
                             + "\nDate: " + year + "년 " +  month + "월 " +  day + "일"
-                            + "\nTime: " + current_Hour + "시 " + current_Minute + "분\n";
+                            + "\nTime: " + current_Hour + "시 " + current_Minute + "분"
+                            + "\n예측값" + predict + "\n";
 
                     current_Minute = minute + object.get("travelTime").getAsInt();
                     if(current_Minute >= 60){
@@ -136,10 +145,17 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
                         current_Minute %= 60;
                     }
                 }
+                try{
+                    predict = m.modelPredict(endStationNM, day, current_Hour, current_Minute);
+                }
+                catch(Exception e){
+                    System.out.println("db에 없는 역");
+                }
                 station_in_course = station_in_course
                         + "\nStation: " + endStationNM
                         + "\nDate: " + year + "년 " +  month + "월 " +  day + "일"
-                        + "\nTime: " + current_Hour + "시 " + current_Minute + "분\n";
+                        + "\nTime: " + current_Hour + "시 " + current_Minute + "분\n"
+                        + "\n예측값" + predict;
 
                 tv_data2.setText(station_in_course);
 
