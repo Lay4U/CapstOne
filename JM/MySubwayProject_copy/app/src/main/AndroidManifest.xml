@@ -13,12 +13,18 @@
         <activity android:name=".ResultView" />
         <activity android:name=".StartStation" />
         <activity android:name=".EndStation" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".model"/>
+        <!--스플래시 액티비티-->
+        <activity android:name=".splashActivity"
+                   android:theme="@style/splashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <!--메인 액티비티-->
+        <activity android:name=".MainActivity">
+
         </activity>
     </application>
 

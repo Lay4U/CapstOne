@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 import org.json.JSONObject;
 
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -28,6 +29,7 @@ public class ResultView extends AppCompatActivity {
     private JSONObject jsonObject;
     private TextView tv_data2;
     private ODsayService odsayService;
+    model Model =new model();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,7 +104,9 @@ public class ResultView extends AppCompatActivity {
 
                 String station_in_course = "startStation: " + startStationNM + " endStation: " + endStationNM
                         + "\nDate: " + year + "년 " +  month + "월 " +  day + "일"
-                        + "\nTime: " + hour + "시 " + minute + "분\n";;
+                        + "\nTime: " + hour + "시 " + minute + "분\n"
+                        + Model.modelPredict(startStationNM, day, hour, minute);;//추가
+
                 int current_Hour = hour;
                 int current_Minute = minute;
                 for (int i = 0; i < stationArray.size(); i++) {
@@ -112,7 +116,9 @@ public class ResultView extends AppCompatActivity {
                     station_in_course = station_in_course
                             + "\nStation: " + current_Station
                             + "\nDate: " + year + "년 " +  month + "월 " +  day + "일"
-                            + "\nTime: " + current_Hour + "시 " + current_Minute + "분\n";
+                            + "\nTime: " + current_Hour + "시 " + current_Minute + "분\n"
+                            + Model.modelPredict(current_Station, day, current_Hour, current_Minute);;//추가;
+
 
                     current_Minute = minute + object.get("travelTime").getAsInt();
                     if(current_Minute >= 60){
@@ -123,12 +129,18 @@ public class ResultView extends AppCompatActivity {
                 station_in_course = station_in_course
                         + "\nStation: " + endStationNM
                         + "\nDate: " + year + "년 " +  month + "월 " +  day + "일"
-                        + "\nTime: " + current_Hour + "시 " + current_Minute + "분\n";
+                        + "\nTime: " + current_Hour + "시 " + current_Minute + "분\n"
+                        + Model.modelPredict(endStationNM, day, current_Hour, current_Minute);//추가;
+
 
                 tv_data2.setText(station_in_course);
 
                 //분해해야함!!!!
             }
+
+
+
+
             // 호출 실패 시 실행
             @Override
             public void onError(int i, String s, API api) {

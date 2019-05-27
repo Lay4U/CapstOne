@@ -16,6 +16,10 @@
         app:layout_constraintStart_toStartOf="parent">
 
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
 
             <TextView
                 android:id="@+id/tv_data2"
@@ -30,6 +34,10 @@
                 android:paddingBottom="10dp"
 
                 android:text="TextView" />
+
+
+        </LinearLayout>
+
 
 
 

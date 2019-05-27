@@ -1,5 +1,6 @@
 package com.example.mysubwayproject;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -21,9 +23,11 @@ public class TimeSetter extends AppCompatActivity implements View.OnClickListene
     private String StartStationNM;
     private DatePicker dp;
     private TimePicker tp;
+    private int year, month, day;
     private int hour;
     private int minute;
     private Calendar c;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,18 +38,28 @@ public class TimeSetter extends AppCompatActivity implements View.OnClickListene
         }
 
         TextView textView = (TextView) findViewById(R.id.textView) ;
-        textView.setText(StartStationNM);
+        textView.setText("출발 : "+StartStationNM);
 
         tp = (TimePicker) findViewById(R.id.tp);
         c = Calendar.getInstance();
+        year = c.get(c.YEAR);
+        month = c.get(c.MONTH);
+        day = c.get(c.DAY_OF_MONTH);
         hour = c.get(c.HOUR_OF_DAY);
         minute = c.get(c.MINUTE);
         tp.setOnTimeChangedListener(this);
 
+        DatePickerDialog dialog = new DatePickerDialog(this, listener, year, month, day);
+        dialog.show();
+
         dp = (DatePicker) findViewById(R.id.dp);
+
 
         Button btn = (Button)findViewById(R.id.button);
         btn.setOnClickListener(this);
+
+
+
     }
 
     @Override
@@ -65,4 +79,21 @@ public class TimeSetter extends AppCompatActivity implements View.OnClickListene
         this.hour = hourOfDay;
         this.minute = minute;
     }
+
+    // DatePickerDialog
+
+
+    private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener() {
+
+        @Override
+
+        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+            Toast.makeText(getApplicationContext(), year + "년" + monthOfYear + "월" + dayOfMonth +"일", Toast.LENGTH_SHORT).show();
+
+        }
+
+    };
+
+
 }
