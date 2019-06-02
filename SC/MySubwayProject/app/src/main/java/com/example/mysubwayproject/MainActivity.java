@@ -22,25 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.finish();
-        readAll();
         Intent intent = new Intent(this, StartStation.class);
         startActivity(intent);
-    }
-//CSV파일 읽기 테스트
-    void readAll() {
-        AssetManager assetManager = getApplication().getAssets();
-        try {
-
-            InputStreamReader is = new InputStreamReader(assetManager.open("강남구청.csv"));
-            BufferedReader br = new BufferedReader(is);
-
-            CSVReader reader = new CSVReader(br);
-            for(String[] data : reader.readAll()){
-                System.out.println(data[0]);
-            }
-        } catch (IOException e) {
-            System.out.println("can not found .csv");
-        }
-
     }
 }
