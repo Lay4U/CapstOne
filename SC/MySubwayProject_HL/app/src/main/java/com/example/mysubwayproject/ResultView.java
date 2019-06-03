@@ -333,8 +333,7 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
                     + "\n예측값: " + currentPredict.get(i) + "\n";
             CircleChart cc = new CircleChart(this, currentPredict.get(i), 100*i, 500*i);
 //            setContentView(cc);
-            Canvas cv = new Canvas();
-            cc.onDraw(cv);
+            cc.onDraw();
 
         }
 

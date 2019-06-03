@@ -32,8 +32,8 @@ public class CircleChart extends View{
         this.y=y;
     }
 
-    public void onDraw(Canvas canvas) {
-
+    public void onDraw() {
+        Canvas canvas = new Canvas();
         //drawArc를 이용하면 오른쪽이 0도가 된다. 난 가장 윗부분을 0도로 보았기 때문에 -90도를 해주었다.
         final float START_POINT = -90f;
 
