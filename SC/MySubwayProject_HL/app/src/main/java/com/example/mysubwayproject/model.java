@@ -76,11 +76,6 @@ public class model {
 
         float x = (float) (1.0 / 60.0 * minute); // input은 24를 받는다.
         float y = a * x + b;
-        System.out.println("");
-        System.out.println("station : " + StationNM);
-        System.out.println("day : " + day);
-        System.out.println("hour : " + hour);
-        System.out.println("minute : " + minute);
         System.out.println("x1 :" + x1);
         System.out.println("x2 :" + x2);
         System.out.println("y1 :" + y1);
