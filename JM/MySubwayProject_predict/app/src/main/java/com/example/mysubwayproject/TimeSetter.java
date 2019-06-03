@@ -28,7 +28,7 @@ public class TimeSetter extends AppCompatActivity implements View.OnClickListene
     private DatePickerDialog dialog;
     private TimePicker tp;
 
-    private int year, month, day;
+    private int cyear, cmonth, cday;
 
     private int hour;
     private int minute;
@@ -44,25 +44,24 @@ public class TimeSetter extends AppCompatActivity implements View.OnClickListene
         }
 
         TextView textView = (TextView) findViewById(R.id.timeSetterText) ;
-        textView.setText("출발역 " + StartStationNM);
+        textView.setText("출발역 _ " + StartStationNM);
         tp = (TimePicker) findViewById(R.id.tp);
 
         c = Calendar.getInstance();
 
-        year = c.get(c.YEAR);
-        month = c.get(c.MONTH);
-        day = c.get(c.DAY_OF_MONTH);
+        cyear = c.get(c.YEAR);
+        cmonth = c.get(c.MONTH);
+        cday = c.get(c.DAY_OF_MONTH);
 
 
         hour = c.get(c.HOUR_OF_DAY);
         minute = c.get(c.MINUTE);
         tp.setOnTimeChangedListener(this);
-        //dialog.setOnDateSetListener(this.listener);
 
 
-
-        dialog = new DatePickerDialog(this, listener, year, month, day);
+        dialog = new DatePickerDialog(this,R.style.DialogTheme,listener, cyear, cmonth, cday);
         dialog.show();
+
 
         Button btn = (Button)findViewById(R.id.button);
         btn.setOnClickListener(this);
@@ -72,9 +71,9 @@ public class TimeSetter extends AppCompatActivity implements View.OnClickListene
     public void onClick(View v){
         Intent intent = new Intent(this, EndStation.class);
         intent.putExtra("StartStationNM", StartStationNM);
-        intent.putExtra("Year", year);
-        intent.putExtra("Month", month);
-        intent.putExtra("Day", day);
+        intent.putExtra("Year", cyear);
+        intent.putExtra("Month", cmonth);
+        intent.putExtra("Day", cday);
         intent.putExtra("Hour", hour);
         intent.putExtra("Minute", minute);
         this.finish();
@@ -89,10 +88,11 @@ public class TimeSetter extends AppCompatActivity implements View.OnClickListene
     }
 
     public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-        this.year= year;
-        this.month = monthOfYear;
-        this.day=dayOfMonth;
+        this.cyear= year;
+        this.cmonth = monthOfYear;
+        this.cday=dayOfMonth;
     }
+
 /*
     DatePickerDialog.OnDateSetListener mDateSetListener =
             new DatePickerDialog.OnDateSetListener() {
@@ -109,14 +109,17 @@ public class TimeSetter extends AppCompatActivity implements View.OnClickListene
 
 */
 
-private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener() {
+ DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener() {
 
     @Override
 
     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 
+        cyear=year;
+        cmonth=monthOfYear+1;
+        cday=dayOfMonth;
 
-        Toast.makeText(getApplicationContext(), year + "년" + monthOfYear+1 + "월" + dayOfMonth +"일", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), cyear + "년" + cmonth + "월" + cday +"일", Toast.LENGTH_SHORT).show();
 
     }
 };

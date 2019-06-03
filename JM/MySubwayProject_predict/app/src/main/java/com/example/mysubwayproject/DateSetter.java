@@ -18,8 +18,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /*
- * 시간을 선택하는 화면을 구성하는 소스코드 입니다!
- * 뒤로가기 키를 구현해야 합니다.
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+삭제예정
  * */
 
 public class DateSetter extends AppCompatActivity implements View.OnClickListener, DatePicker.OnDateChangedListener {

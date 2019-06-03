@@ -8,20 +8,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@android:color/white"
         android:orientation="vertical">
-<!--
-                <DatePicker
-                    android:text="날짜 설정"
-                    android:id="@+id/dpd"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|top"
-                    android:background="@drawable/time_box"
-                    app:layout_constraintBottom_toTopOf="@+id/tp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-                </DatePicker>
--->
 
         <TextView
             android:id="@+id/timeSetterText"
@@ -29,9 +17,18 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:text="시간설정"
             android:textStyle="bold"
-            android:textSize="25dp" />
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="출발시간을 설정하세요"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="15dp" />
 
         <TimePicker
             android:id="@+id/tp"
@@ -41,13 +38,11 @@
             android:layout_gravity="center"
             android:background="@drawable/time_box"
             android:timePickerMode="spinner"
-            app:layout_constraintBottom_toTopOf="@+id/textView"
-            app:layout_constraintStart_toStartOf="@+id/dp"
-            app:layout_constraintTop_toBottomOf="@+id/dp">
+            app:layout_constraintBottom_toTopOf="@+id/textView">
 
         </TimePicker>
 
-
+<!--
         <TextView
             android:id="@+id/textView"
             android:layout_width="142dp"
@@ -60,6 +55,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/tp"
             app:layout_constraintTop_toBottomOf="@+id/tp" />
+-->
 
         <Button
             android:id="@+id/button"

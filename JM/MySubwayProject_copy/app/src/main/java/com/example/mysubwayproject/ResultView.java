@@ -1,10 +1,8 @@
 package com.example.mysubwayproject;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
-import org.json.JSONObject;
-
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -13,6 +11,7 @@ import com.odsay.odsayandroidsdk.API;
 import com.odsay.odsayandroidsdk.ODsayData;
 import com.odsay.odsayandroidsdk.ODsayService;
 import com.odsay.odsayandroidsdk.OnResultCallbackListener;
+
 
 /*
  * 최종 화면을 구성할 예정인 소스코드 입니다!
