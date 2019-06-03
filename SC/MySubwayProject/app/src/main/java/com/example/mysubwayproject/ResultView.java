@@ -9,20 +9,32 @@ import android.widget.Button;
 import android.widget.TextView;
 import org.json.JSONObject;
 
+import com.anychart.AnyChart;
+import com.anychart.AnyChartView;
+import com.anychart.chart.common.dataentry.DataEntry;
+import com.anychart.chart.common.dataentry.PertDataEntry;
+import com.anychart.chart.common.dataentry.ValueDataEntry;
+import com.anychart.charts.Cartesian;
+import com.anychart.charts.Pert;
+import com.anychart.core.cartesian.series.Column;
+
+import com.anychart.enums.TreeFillingMethod;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+
 import com.odsay.odsayandroidsdk.API;
 import com.odsay.odsayandroidsdk.ODsayData;
 import com.odsay.odsayandroidsdk.ODsayService;
 import com.odsay.odsayandroidsdk.OnResultCallbackListener;
-import com.opencsv.CSVReader;
 
+import com.opencsv.CSVReader;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 /*
  * 최종 화면을 구성할 예정인 소스코드 입니다!
@@ -37,7 +49,7 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
     private int hour;
     private int minute;
     private JSONObject jsonObject;
-    private TextView tv_data2;
+    //private TextView tv_data2;
     private ODsayService odsayService;
     Button btnSubway;
 
@@ -52,7 +64,7 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result_view);
-        tv_data2 = (TextView) findViewById(R.id.tv_data2);
+        //tv_data2 = (TextView) findViewById(R.id.tv_data2);
         this.startStationNM = getIntent().getStringExtra("StartStationNM");
         this.endStationNM = getIntent().getStringExtra("EndStationNM");
         this.year = getIntent().getIntExtra("Year", year);
@@ -62,7 +74,7 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
         this.minute = getIntent().getIntExtra("Minute", minute);
 
         TextView textPageNM = (TextView)findViewById(R.id.start_and_end);
-        textPageNM.setText(startStationNM + "    "+   endStationNM);
+        textPageNM.setText(startStationNM + "역 "+ month + "월 "+ day + "일 "+ hour + "시 "+ minute + "분");
         findStationID();
 
         btnSubway = (Button)findViewById(R.id.complete);
@@ -108,7 +120,7 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
             // 호출 실패 시 실행
             @Override
             public void onError(int i, String s, API api) {
-                tv_data2.setText("API : " + api.name() + "\n" + "error");
+                //tv_data2.setText("API : " + api.name() + "\n" + "error");
             }
         };
         if(startStationNM.equals("광교")){
@@ -220,7 +232,7 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
 
             @Override
             public void onError(int i, String s, API api) {
-                tv_data2.setText("API : " + api.name() + "\n" + "error");
+                //tv_data2.setText("API : " + api.name() + "\n" + "error");
             }
         };
 
@@ -267,27 +279,31 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
         }
 
         float res;
-        res = Float.parseFloat(model_setComplet[hour+3]) + Float.parseFloat(model_setComplet[hour+4]);
-        res = res/60*minute;
+        try {
+            res = Float.parseFloat(model_setComplet[hour + 3]) + Float.parseFloat(model_setComplet[hour + 4]);
+            res = res / 60 * minute;
+        }catch (Exception e){
+            return 0;
+        }
         return res;
     }
 
     void makeCourse(){
 
-        String station_in_course = "";
-        for(String data : exStation)
-            station_in_course = station_in_course + data + " ";
-        station_in_course = station_in_course + endStationNM + "\n";
+        String exStationList = "";
+        for (String station : exStation)
+            exStationList = exStationList + station + " ▶ ";
+        exStationList += endStationNM;
+        TextView exChange = (TextView)findViewById(R.id.exStation);
+        exChange.setText(exStationList);
 
-        for (int i = 0; i < StationNMArray.size(); i++) {
-            String current_Station = StationNMArray.get(i);
-
-            station_in_course = station_in_course + "\nStation: " + current_Station
-                    + "\nDate: " + year + "년 " +  month + "월 " +  day + "일"
-                    + "\nTime: " + currentHourArray.get(i) + "시 " + currentMinArray.get(i) + "분"
-                    + "\n예측값: " + currentPredict.get(i) + "\n";
-        }
-
-        tv_data2.setText(station_in_course);
+        //혼잡도 그래프
+        Cartesian cartesian = AnyChart.column();
+        List<DataEntry> data = new ArrayList<>();
+        for (int i = 0; i < StationNMArray.size(); i++)
+            data.add(new ValueDataEntry(StationNMArray.get(i), currentPredict.get(i)));
+        Column column = cartesian.column(data);
+        AnyChartView complexChartView = findViewById(R.id.complexChart);
+        complexChartView.setChart(cartesian);
     }
 }
