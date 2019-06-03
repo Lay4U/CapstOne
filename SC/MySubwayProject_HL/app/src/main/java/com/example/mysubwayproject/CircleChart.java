@@ -1,11 +1,13 @@
 package com.example.mysubwayproject;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 
+import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.graphics.Canvas;
@@ -25,11 +27,8 @@ public class CircleChart extends View{
     int x ;
     int y ;
 
-    public  CircleChart(Context context, float predict, int x, int y ) {
-        super(context);
-        this.predict = predict;
-        this.x=x;
-        this.y=y;
+    public  CircleChart(Context context, AttributeSet attrs) {
+        super(context, attrs);
     }
 
     public void onDraw() {

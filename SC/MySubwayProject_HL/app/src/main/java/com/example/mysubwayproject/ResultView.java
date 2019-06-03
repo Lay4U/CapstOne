@@ -51,7 +51,7 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
     private int hour;
     private int minute;
     private JSONObject jsonObject;
-    //private TextView tv_data2;
+    private TextView tv_data2;
     private ODsayService odsayService;
     Button btnSubway;
 
@@ -66,7 +66,7 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result_view);
-        //tv_data2 = (TextView) findViewById(R.id.tv_data2);
+        tv_data2 = (TextView) findViewById(R.id.tv_data2);
         this.startStationNM = getIntent().getStringExtra("StartStationNM");
         this.endStationNM = getIntent().getStringExtra("EndStationNM");
         this.year = getIntent().getIntExtra("Year", year);
@@ -334,7 +334,7 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
             CircleChart cc = new CircleChart(this, currentPredict.get(i), 100*i, 500*i);
 //            setContentView(cc);
             cc.onDraw();
-
+            tv_data2.setText(station_in_course);
         }
 
 
