@@ -1,5 +1,6 @@
 package com.example.mysubwayproject;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Canvas;
@@ -289,6 +290,7 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
         return res;
     }
 
+    @SuppressLint("WrongCall")
     void makeCourse(){
 
 //        String exStationList = "";
@@ -329,18 +331,21 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
                     + "\nDate: " + year + "년 " +  month + "월 " +  day + "일"
                     + "\nTime: " + currentHourArray.get(i) + "시 " + currentMinArray.get(i) + "분"
                     + "\n예측값: " + currentPredict.get(i) + "\n";
-        }
-        writing = new ArrayList<WritingVO>();
-        Canvas canvas = new Canvas();
-        WritingVO wVO1 = new WritingVO((float) 100, (float)100);
-        WritingVO wVO2 = new WritingVO((float) 1, (float)10);
+            CircleChart cc = new CircleChart(this, currentPredict.get(i), 100*i, 500*i);
+//            setContentView(cc);
+            Canvas cv = new Canvas();
+            cc.onDraw(cv);
 
-        writing.add(wVO1);
-        writing.add(wVO2);
+        }
+
+
+
+
+
 
         //x, y는 위치 writing은 값
-        CircleChart cc = new CircleChart(this, writing, 100, 500);
-        setContentView(cc);
+
+//        setContentView(cc);
 
 
 

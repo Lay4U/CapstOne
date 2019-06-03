@@ -21,13 +21,13 @@ import com.example.mysubwayproject.WritingVO;
 public class CircleChart extends View{
 
 
-    ArrayList<WritingVO> writing = null;
+    float predict = 0;
     int x ;
     int y ;
 
-    public  CircleChart(Context context, ArrayList<WritingVO> writing, int x, int y ) {
+    public  CircleChart(Context context, float predict, int x, int y ) {
         super(context);
-        this.writing = writing;
+        this.predict = predict;
         this.x=x;
         this.y=y;
     }
@@ -41,20 +41,15 @@ public class CircleChart extends View{
         final float ANGLE_PER_SCORE = (float)360/250;
         Log.i("쉬비", ANGLE_PER_SCORE+"");
         //획득한 점수를 퍼센트로 나타냄
-        float successPoint =  (float)writing.get(0).getTotal_success()/(float)writing.get(0).getTot_stamp_cnt()*100;
+        float successPoint =  predict;
         Log.i("쉬비", successPoint+"");
         successPoint = Math.round(successPoint*10);
         Log.i("쉬비", successPoint+"");
         successPoint = successPoint/(float)10.0;
         Log.i("쉬비", successPoint+"");
 
-        float successPoint2 =  (float)writing.get(1).getTotal_success()/(float)writing.get(1).getTot_stamp_cnt()*100;
-        successPoint2 = Math.round(successPoint2*10);
-        successPoint2 = successPoint2/(float)10.0;
-
         //획득한 점수 부분의 각 (획득한 점수의 퍼센트 * 1점당 각도)
-        float angle = successPoint*ANGLE_PER_SCORE;
-        float angle2 = successPoint2*ANGLE_PER_SCORE;
+        float angle = successPoint;
         int x2 = x+500;
         int y2 = y+500;
 
@@ -97,7 +92,7 @@ public class CircleChart extends View{
             p.setTextSize(y/4);
             canvas.drawText(String.valueOf(successPoint), (float)((x+y)/3.2), (float)((x+y)/1.7), p);
             p.setTextSize(y/6);
-            canvas.drawText("%", (float)((x+y)/4+(y/4*1.8)), (float)((x+y)/1.7), p);
+            canvas.drawText("", (float)((x+y)/4+(y/4*1.8)), (float)((x+y)/1.7), p);
         }
 
     }
