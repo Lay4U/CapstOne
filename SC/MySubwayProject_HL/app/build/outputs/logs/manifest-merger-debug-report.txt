@@ -1,0 +1,236 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:2:1-26:12
+INJECTED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:2:1-26:12
+INJECTED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:2:1-26:12
+INJECTED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:2:1-26:12
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\1175a02cb262f83bdf4273d8d80f7b73\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:design:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\ce9d044298514024eedbdf54d25dcea3\AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.AnyChart:AnyChart-Android:1.1.2] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\AnyChart-Android-1.1.2.aar\f90abf1fa535c142ee130e9566774da1\AndroidManifest.xml:2:1-17:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\3dcc5516f44973667c73ca893f5b4952\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\8c71f55c9c3b64b370fc5162a1427a08\AndroidManifest.xml:2:1-11:12
+MERGED from [:SDK_release_v1.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\SDK_release_v1.0.aar\fcb40fdf4a27c5580fb66499a0ef0139\AndroidManifest.xml:2:1-13:12
+MERGED from [:trafficsubway-release] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\trafficsubway-release.aar\30adc0f83df6600eca28a2959fe14547\AndroidManifest.xml:2:1-32:12
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\1cecb98e037fe3fd540cdc8402c54610\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\3da5d766519a57a632f9b17a430916f6\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\b039313394baf33997a43c854959edeb\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\2850531127dbfb78257c78d793935194\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\66a81ec6abe9182cb55b2bfbda70ca45\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\f51199968fd83a45b6ae9a44010ce23a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\c7574f1f67bb5932d693c8c9fe2ae723\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\1553d27f8d3d970fa20ccd03dbc85edb\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\eb9b196e90fb0d1f6b546c176b99428c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\3885af76fd78e39d999e62fc41402f2b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\9bd03c716b412ffe38208e9d00cfdc73\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\9515b94208cda87ac61f2445cdc7d40f\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\50576ff966414a48e307bb831e5a2b5a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\a81cd51728de0559ae78c6fd94504d5f\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\daae985f1b1b090be1edaa0296302e26\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\02267ba9c6ebb47f55f4c0699626ed05\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\ad53a3d82c9af46a3a1de0ed3f4f4a33\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\2df5d5b53d6c140453ff89c86ba95156\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\08dd45ff2aaf34d27c32ab4fdcdd9ba4\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\65bd6792b8e469ece432b4297f5c9f9f\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\9ab900c89f04993f45ad5e9faae85cc4\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\d037ec4bb839e0e32c36b69ae296ba4d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\b653d22289b5ab8e7e3358aa45312d21\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\2840c3bafed9b16cfcf46aebf3af73af\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\b988feee07b712eece45fa62dc851ba0\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\c1c505ff294750f2d79b13b934b51b15\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\cb66e6c96d54fa2f224f24bfc624137a\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\dac15e1a7a64e4573e1a24394385036c\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:2:1-26:12
+INJECTED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:2:1-26:12
+INJECTED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:2:1-26:12
+	package
+		ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:3:5-42
+		INJECTED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:2:1-26:12
+		INJECTED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:2:1-26:12
+		INJECTED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:2:11-69
+application
+ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:5:5-24:19
+MERGED from [com.android.support:design:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\ce9d044298514024eedbdf54d25dcea3\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\ce9d044298514024eedbdf54d25dcea3\AndroidManifest.xml:22:5-20
+MERGED from [com.github.AnyChart:AnyChart-Android:1.1.2] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\AnyChart-Android-1.1.2.aar\f90abf1fa535c142ee130e9566774da1\AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.AnyChart:AnyChart-Android:1.1.2] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\AnyChart-Android-1.1.2.aar\f90abf1fa535c142ee130e9566774da1\AndroidManifest.xml:11:5-15:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\8c71f55c9c3b64b370fc5162a1427a08\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\8c71f55c9c3b64b370fc5162a1427a08\AndroidManifest.xml:9:5-20
+MERGED from [:trafficsubway-release] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\trafficsubway-release.aar\30adc0f83df6600eca28a2959fe14547\AndroidManifest.xml:13:5-30:19
+MERGED from [:trafficsubway-release] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\trafficsubway-release.aar\30adc0f83df6600eca28a2959fe14547\AndroidManifest.xml:13:5-30:19
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\02267ba9c6ebb47f55f4c0699626ed05\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\02267ba9c6ebb47f55f4c0699626ed05\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\ad53a3d82c9af46a3a1de0ed3f4f4a33\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\ad53a3d82c9af46a3a1de0ed3f4f4a33\AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\02267ba9c6ebb47f55f4c0699626ed05\AndroidManifest.xml:22:18-91
+	android:supportsRtl
+		ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:11:9-40
+activity#com.example.mysubwayproject.PieChart
+ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:12:9-55
+	android:name
+		ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:12:19-43
+activity#com.example.mysubwayproject.TimeSetter
+ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:13:9-48
+	android:name
+		ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:13:19-45
+activity#com.example.mysubwayproject.ResultView
+ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:14:9-48
+	android:name
+		ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:14:19-45
+activity#com.example.mysubwayproject.StartStation
+ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:15:9-50
+	android:name
+		ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:15:19-47
+activity#com.example.mysubwayproject.EndStation
+ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:16:9-48
+	android:name
+		ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:16:19-45
+activity#com.example.mysubwayproject.MainActivity
+ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:17:9-23:20
+	android:name
+		ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:17:19-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:18:13-22:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:19:17-69
+	android:name
+		ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:19:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:21:17-77
+	android:name
+		ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml:21:27-74
+uses-sdk
+INJECTED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\1175a02cb262f83bdf4273d8d80f7b73\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\1175a02cb262f83bdf4273d8d80f7b73\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:design:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\ce9d044298514024eedbdf54d25dcea3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\ce9d044298514024eedbdf54d25dcea3\AndroidManifest.xml:20:5-44
+MERGED from [com.github.AnyChart:AnyChart-Android:1.1.2] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\AnyChart-Android-1.1.2.aar\f90abf1fa535c142ee130e9566774da1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.AnyChart:AnyChart-Android:1.1.2] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\AnyChart-Android-1.1.2.aar\f90abf1fa535c142ee130e9566774da1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\3dcc5516f44973667c73ca893f5b4952\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\3dcc5516f44973667c73ca893f5b4952\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\8c71f55c9c3b64b370fc5162a1427a08\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\8c71f55c9c3b64b370fc5162a1427a08\AndroidManifest.xml:5:5-7:41
+MERGED from [:SDK_release_v1.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\SDK_release_v1.0.aar\fcb40fdf4a27c5580fb66499a0ef0139\AndroidManifest.xml:7:5-9:41
+MERGED from [:SDK_release_v1.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\SDK_release_v1.0.aar\fcb40fdf4a27c5580fb66499a0ef0139\AndroidManifest.xml:7:5-9:41
+MERGED from [:trafficsubway-release] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\trafficsubway-release.aar\30adc0f83df6600eca28a2959fe14547\AndroidManifest.xml:7:5-9:41
+MERGED from [:trafficsubway-release] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\trafficsubway-release.aar\30adc0f83df6600eca28a2959fe14547\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\1cecb98e037fe3fd540cdc8402c54610\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\1cecb98e037fe3fd540cdc8402c54610\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\3da5d766519a57a632f9b17a430916f6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\3da5d766519a57a632f9b17a430916f6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\b039313394baf33997a43c854959edeb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\b039313394baf33997a43c854959edeb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\2850531127dbfb78257c78d793935194\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\2850531127dbfb78257c78d793935194\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\66a81ec6abe9182cb55b2bfbda70ca45\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\66a81ec6abe9182cb55b2bfbda70ca45\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\f51199968fd83a45b6ae9a44010ce23a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\f51199968fd83a45b6ae9a44010ce23a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\c7574f1f67bb5932d693c8c9fe2ae723\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\c7574f1f67bb5932d693c8c9fe2ae723\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\1553d27f8d3d970fa20ccd03dbc85edb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\1553d27f8d3d970fa20ccd03dbc85edb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\eb9b196e90fb0d1f6b546c176b99428c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\eb9b196e90fb0d1f6b546c176b99428c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\3885af76fd78e39d999e62fc41402f2b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\3885af76fd78e39d999e62fc41402f2b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\9bd03c716b412ffe38208e9d00cfdc73\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\9bd03c716b412ffe38208e9d00cfdc73\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\9515b94208cda87ac61f2445cdc7d40f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\9515b94208cda87ac61f2445cdc7d40f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\50576ff966414a48e307bb831e5a2b5a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\50576ff966414a48e307bb831e5a2b5a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\a81cd51728de0559ae78c6fd94504d5f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\a81cd51728de0559ae78c6fd94504d5f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\daae985f1b1b090be1edaa0296302e26\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\daae985f1b1b090be1edaa0296302e26\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\02267ba9c6ebb47f55f4c0699626ed05\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\02267ba9c6ebb47f55f4c0699626ed05\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\ad53a3d82c9af46a3a1de0ed3f4f4a33\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\ad53a3d82c9af46a3a1de0ed3f4f4a33\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\2df5d5b53d6c140453ff89c86ba95156\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\2df5d5b53d6c140453ff89c86ba95156\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\08dd45ff2aaf34d27c32ab4fdcdd9ba4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\08dd45ff2aaf34d27c32ab4fdcdd9ba4\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\65bd6792b8e469ece432b4297f5c9f9f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\65bd6792b8e469ece432b4297f5c9f9f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\9ab900c89f04993f45ad5e9faae85cc4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\9ab900c89f04993f45ad5e9faae85cc4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\d037ec4bb839e0e32c36b69ae296ba4d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\d037ec4bb839e0e32c36b69ae296ba4d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\b653d22289b5ab8e7e3358aa45312d21\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\b653d22289b5ab8e7e3358aa45312d21\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\2840c3bafed9b16cfcf46aebf3af73af\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\2840c3bafed9b16cfcf46aebf3af73af\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\b988feee07b712eece45fa62dc851ba0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\b988feee07b712eece45fa62dc851ba0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\c1c505ff294750f2d79b13b934b51b15\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\c1c505ff294750f2d79b13b934b51b15\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\cb66e6c96d54fa2f224f24bfc624137a\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\cb66e6c96d54fa2f224f24bfc624137a\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\dac15e1a7a64e4573e1a24394385036c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\dac15e1a7a64e4573e1a24394385036c\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Mir\Python\capstone\SC\MySubwayProject_HL\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from [:SDK_release_v1.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\SDK_release_v1.0.aar\fcb40fdf4a27c5580fb66499a0ef0139\AndroidManifest.xml:11:5-67
+MERGED from [:trafficsubway-release] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\trafficsubway-release.aar\30adc0f83df6600eca28a2959fe14547\AndroidManifest.xml:11:5-67
+MERGED from [:trafficsubway-release] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\trafficsubway-release.aar\30adc0f83df6600eca28a2959fe14547\AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from [:SDK_release_v1.0] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\SDK_release_v1.0.aar\fcb40fdf4a27c5580fb66499a0ef0139\AndroidManifest.xml:11:22-64
+activity#kr.go.seoul.trafficsubway.TrafficSubwayDetailTypeA
+ADDED from [:trafficsubway-release] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\trafficsubway-release.aar\30adc0f83df6600eca28a2959fe14547\AndroidManifest.xml:17:9-19:52
+	android:screenOrientation
+		ADDED from [:trafficsubway-release] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\trafficsubway-release.aar\30adc0f83df6600eca28a2959fe14547\AndroidManifest.xml:19:13-49
+	android:name
+		ADDED from [:trafficsubway-release] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\trafficsubway-release.aar\30adc0f83df6600eca28a2959fe14547\AndroidManifest.xml:18:13-78
+activity#kr.go.seoul.trafficsubway.TrafficSubwayInfoTypeA
+ADDED from [:trafficsubway-release] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\trafficsubway-release.aar\30adc0f83df6600eca28a2959fe14547\AndroidManifest.xml:20:9-23:59
+	android:screenOrientation
+		ADDED from [:trafficsubway-release] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\trafficsubway-release.aar\30adc0f83df6600eca28a2959fe14547\AndroidManifest.xml:22:13-49
+	android:theme
+		ADDED from [:trafficsubway-release] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\trafficsubway-release.aar\30adc0f83df6600eca28a2959fe14547\AndroidManifest.xml:23:13-56
+	android:name
+		ADDED from [:trafficsubway-release] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\trafficsubway-release.aar\30adc0f83df6600eca28a2959fe14547\AndroidManifest.xml:21:13-76
+activity#kr.go.seoul.trafficsubway.TrafficSubwayDetailTypeB
+ADDED from [:trafficsubway-release] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\trafficsubway-release.aar\30adc0f83df6600eca28a2959fe14547\AndroidManifest.xml:24:9-26:52
+	android:screenOrientation
+		ADDED from [:trafficsubway-release] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\trafficsubway-release.aar\30adc0f83df6600eca28a2959fe14547\AndroidManifest.xml:26:13-49
+	android:name
+		ADDED from [:trafficsubway-release] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\trafficsubway-release.aar\30adc0f83df6600eca28a2959fe14547\AndroidManifest.xml:25:13-78
+activity#kr.go.seoul.trafficsubway.TrafficSubwayInfoTypeB
+ADDED from [:trafficsubway-release] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\trafficsubway-release.aar\30adc0f83df6600eca28a2959fe14547\AndroidManifest.xml:27:9-29:52
+	android:screenOrientation
+		ADDED from [:trafficsubway-release] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\trafficsubway-release.aar\30adc0f83df6600eca28a2959fe14547\AndroidManifest.xml:29:13-49
+	android:name
+		ADDED from [:trafficsubway-release] C:\Users\Mir\.gradle\caches\transforms-1\files-1.1\trafficsubway-release.aar\30adc0f83df6600eca28a2959fe14547\AndroidManifest.xml:28:13-76

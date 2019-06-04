@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TimeSetter">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/timeSetterText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:textStyle="bold"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="출발시간을 설정하세요"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="15dp" />
+
+        <TimePicker
+            android:id="@+id/tp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            android:background="@drawable/time_box"
+            android:timePickerMode="spinner"
+            app:layout_constraintBottom_toTopOf="@+id/textView">
+
+        </TimePicker>
+
+<!--
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="142dp"
+            android:layout_height="84dp"
+            android:layout_gravity="center"
+            android:text="TextView"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:lineSpacingExtra="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tp"
+            app:layout_constraintTop_toBottomOf="@+id/tp" />
+-->
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="다음"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    </LinearLayout>
+
+    <!--
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:paddingLeft="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/timeSetterText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+        <TimePicker
+            android:id="@+id/tp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:timePickerMode="spinner"
+            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dp">
+
+        </TimePicker>
+
+        <DatePicker
+            android:id="@+id/dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            app:layout_constraintBottom_toTopOf="@+id/tp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
+
+        </DatePicker>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="103dp"
+            android:layout_height="55dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginRight="36dp"
+            android:layout_marginBottom="126dp"
+            android:text="다음"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tp"
+            app:layout_constraintTop_toBottomOf="@+id/tp" />
+
+            -->
+
+</android.support.constraint.ConstraintLayout>

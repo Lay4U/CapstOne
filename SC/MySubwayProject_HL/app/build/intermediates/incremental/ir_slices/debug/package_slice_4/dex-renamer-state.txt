@@ -1,0 +1,4 @@
+#Mon Jun 03 17:50:49 KST 2019
+base.0=C\:\\Users\\Mir\\Python\\capstone\\SC\\MySubwayProject_HL\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\4
+path.0=classes.dex
+renamed.0=classes.dex

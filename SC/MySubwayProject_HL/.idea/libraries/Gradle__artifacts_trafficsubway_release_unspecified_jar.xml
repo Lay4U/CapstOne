@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: artifacts:trafficsubway-release:unspecified@jar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/trafficsubway-release.aar/30adc0f83df6600eca28a2959fe14547/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/trafficsubway-release.aar/30adc0f83df6600eca28a2959fe14547/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
