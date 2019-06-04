@@ -15,8 +15,10 @@ public class model {
     {
         Scanner scan = null;
         try {
-            scan = new Scanner(new File("file:///android_lib/"+StationNM+".csv"));
+//            scan = new Scanner(new File("file:///android_lib/"+StationNM+".csv"));
+            scan = new Scanner(new File("file:///app/src/main/assets/"+StationNM+".csv"));
         } catch (FileNotFoundException e) {
+
             e.printStackTrace();
         }
         ArrayList<String[]> records = new ArrayList<String[]>();

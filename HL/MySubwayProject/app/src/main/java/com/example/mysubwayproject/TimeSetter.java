@@ -33,8 +33,8 @@ public class TimeSetter extends AppCompatActivity implements View.OnClickListene
             this.StartStationNM = getIntent().getStringExtra("StartStationNM");
         }
 
-        TextView textView = (TextView) findViewById(R.id.textView) ;
-        textView.setText(StartStationNM);
+        TextView textView = (TextView) findViewById(R.id.timeSetterText) ;
+        textView.setText("출발역 " + StartStationNM);
 
         tp = (TimePicker) findViewById(R.id.tp);
         c = Calendar.getInstance();
@@ -57,6 +57,7 @@ public class TimeSetter extends AppCompatActivity implements View.OnClickListene
         intent.putExtra("Day", dp.getDayOfMonth());
         intent.putExtra("Hour", hour);
         intent.putExtra("Minute", minute);
+        this.finish();
         startActivity(intent);
     }
 

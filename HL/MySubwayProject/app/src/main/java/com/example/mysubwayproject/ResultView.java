@@ -1,7 +1,11 @@
 package com.example.mysubwayproject;
 
+import android.content.Intent;
+import android.content.res.AssetManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import org.json.JSONObject;
 
@@ -12,9 +16,13 @@ import com.odsay.odsayandroidsdk.API;
 import com.odsay.odsayandroidsdk.ODsayData;
 import com.odsay.odsayandroidsdk.ODsayService;
 import com.odsay.odsayandroidsdk.OnResultCallbackListener;
+import com.opencsv.CSVReader;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -22,7 +30,7 @@ import java.util.Scanner;
 /*
  * 최종 화면을 구성할 예정인 소스코드 입니다!
  * */
-public class ResultView extends AppCompatActivity {
+public class ResultView extends AppCompatActivity implements View.OnClickListener {
     String startStationNM;
     private String StationID = "null";
     private String endStationNM;
@@ -31,9 +39,12 @@ public class ResultView extends AppCompatActivity {
     private int day;
     private int hour;
     private int minute;
+    private float predict;
     private JSONObject jsonObject;
     private TextView tv_data2;
     private ODsayService odsayService;
+    private Button btnSubway;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +59,19 @@ public class ResultView extends AppCompatActivity {
         this.day = getIntent().getIntExtra("Day", day);
         this.hour = getIntent().getIntExtra("Hour", hour);
         this.minute = getIntent().getIntExtra("Minute", minute);
+
+        TextView textPageNM = (TextView)findViewById(R.id.start_and_end);
+        textPageNM.setText(startStationNM + "    "+   endStationNM);
         findStationID();
+
+        btnSubway = (Button)findViewById(R.id.complete);
+        btnSubway.setOnClickListener(this);
+    }
+    @Override
+    public void onClick(View v){
+        this.finish();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
     protected void findStationID(){
@@ -67,7 +90,7 @@ public class ResultView extends AppCompatActivity {
 
                 String stationName = "";
                 String stationID = "";
-                for (int i = 0; i < stationArray.size(); i++) {
+                for (int i = 0; i < stationArray.size(); i++) {//수정필요!!!!
                     JsonObject object = (JsonObject) stationArray.get(i);
                     stationName = object.get("stationName").getAsString();
                     stationID = object.get("stationID").getAsString();
@@ -114,11 +137,17 @@ public class ResultView extends AppCompatActivity {
                 for (int i = 0; i < stationArray.size(); i++) {
                     JsonObject object = (JsonObject) stationArray.get(i);
                     String current_Station = object.get("startName").getAsString();
-
+                    try {
+                        predict = modelPredict(current_Station, day, current_Hour, current_Minute);
+                    }
+                    catch (Exception e){
+                        predict = -1;
+                    }
                     station_in_course = station_in_course
                             + "\nStation: " + current_Station
                             + "\nDate: " + year + "년 " +  month + "월 " +  day + "일"
-                            + "\nTime: " + current_Hour + "시 " + current_Minute + "분\n";
+                            + "\nTime: " + current_Hour + "시 " + current_Minute + "분"
+                            + "\n예측값" + predict + "\n";
 
                     current_Minute = minute + object.get("travelTime").getAsInt();
                     if(current_Minute >= 60){
@@ -126,10 +155,17 @@ public class ResultView extends AppCompatActivity {
                         current_Minute %= 60;
                     }
                 }
+                try {
+                    predict = modelPredict(endStationNM, day, current_Hour, current_Minute);
+                }
+                catch (Exception e){
+                    predict = -1;
+                }
                 station_in_course = station_in_course
                         + "\nStation: " + endStationNM
                         + "\nDate: " + year + "년 " +  month + "월 " +  day + "일"
-                        + "\nTime: " + current_Hour + "시 " + current_Minute + "분\n";
+                        + "\nTime: " + current_Hour + "시 " + current_Minute + "분"
+                        + "\n예측값" + predict + "\n";
 
                 tv_data2.setText(station_in_course);
 
@@ -147,55 +183,28 @@ public class ResultView extends AppCompatActivity {
 
     public float modelPredict(String StationNM, int day, int hour, int minute)
     {
-        Scanner scan = null;
-        try {
-            scan = new Scanner(new File("file:///android_lib/"+StationNM+".csv"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        AssetManager assetManager = getApplication().getAssets();
         ArrayList<String[]> records = new ArrayList<String[]>();
         ArrayList<Integer> model_list = new ArrayList<Integer>();
+        try {
 
-        while (scan.hasNext()) {
-            String[] record;
-            record = scan.nextLine().split(",");
-            records.add(record);
-        }
+            InputStreamReader is = new InputStreamReader(assetManager.open(StationNM+".csv"));
+            BufferedReader br = new BufferedReader(is);
 
-        // 확인용 출력 확인완료
-//		int i = 0;
-//		for (String[] temp : records) {
-//			for (String temp1 : temp) {
-//				System.out.print(temp1 + " ");
-//				i++;
-//			}
-//			System.out.print("\n");
-//		}
-//		System.out.println(i);
-        // 과학적표기법 -> 실수
-
-        for (String[] temp : records) {
-            for (String temp1 : temp) {
-                int val = new BigDecimal(temp1).intValue();
+            CSVReader reader = new CSVReader(br);
+            for(String[] data : reader.readAll()){
+                int val = new BigDecimal(data[0]).intValue();
                 model_list.add(val);
             }
+        } catch (IOException e) {
+            System.out.println("can not found .csv");
         }
-//		for(int t : model_list) {
-//			System.out.println(t);
-//		}	//확인완료
+
+
         int[] model = new int[model_list.size()];
         for (int i = 0; i < model.length; i++) {
             model[i] = model_list.get(i).intValue();
         }
-//		for(int t : model) {
-//		System.out.println(t);
-//	}	//확인완료
-
-        //가정
-        //day 기준점으로부터 8
-        //시간은 7시 24분일때
-        //0부터 8까지 떨어져있는 8*20 + 7, 8*20 + 8을 직선의 방정식으로 구한다.
-        // input 기준점으로부터 day(8)과 시각(7)을 받는다.
 
         int x1 = day * 20 + hour;
         int x2 = day * 20 + hour + 1;
@@ -217,7 +226,7 @@ public class ResultView extends AppCompatActivity {
         System.out.println("a :" + a);
         System.out.println("b :" + b);
         System.out.println("x :" + x);
-        System.out.print(y);
+        System.out.println("y :" + y);
 
         return y;
     }

@@ -1,5 +1,0 @@
-<resources>
-    <string name="app_name">mainMenu</string>
-    <string name="main_back_end">Press again to exit</string>
-    <string name="read_error">No {1} data</string>
-</resources>

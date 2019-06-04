@@ -35,6 +35,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.opencsv:opencsv:3.9'
     implementation project(':trafficsubway-release')
+    implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
     //compile 'com.github.karrel84:RellDatePicker:0.0.1'
 
 }

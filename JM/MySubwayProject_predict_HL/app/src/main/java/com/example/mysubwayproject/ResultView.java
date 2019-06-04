@@ -2,16 +2,8 @@ package com.example.mysubwayproject;
 
 import android.content.Intent;
 import android.content.res.AssetManager;
-import android.graphics.Color;
-import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.text.style.ForegroundColorSpan;
-import android.text.style.RelativeSizeSpan;
-import android.text.style.StyleSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -280,9 +272,9 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
         return res;
     }
 
-    void makeCourse() {
+    void makeCourse(){
 
-        ArrayList<String> stationRoute = new ArrayList<String>();
+        ArrayList<String> stationRoute=new ArrayList<String>();
 /*
         stationRoute.add(exStation+"");
         stationRoute.add(endStationNM + "\n");
@@ -294,84 +286,19 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
 
 
         String station_in_course = "";
-        for (String data : exStation)
+        for(String data : exStation)
             station_in_course = station_in_course + data + " ";
         station_in_course = station_in_course + endStationNM + "\n";
 
-
-        SpannableStringBuilder ssb;
         for (int i = 0; i < StationNMArray.size(); i++) {
             String current_Station = StationNMArray.get(i);
-            station_in_course = station_in_course + "\n역명: " + current_Station
-                    + "\n날짜: " + year + "년 " + month + "월 " + day + "일"
-                    + "\n시간: " + currentHourArray.get(i) + "시 " + currentMinArray.get(i) + "분"
-                    + "\n포화도: " + Math.round(currentPredict.get(i)) + "\n";
 
+            station_in_course = station_in_course + "\nStation: " + current_Station
+                    + "\nDate: " + year + "년 " +  month + "월 " +  day + "일"
+                    + "\nTime: " + currentHourArray.get(i) + "시 " + currentMinArray.get(i) + "분"
+                    + "\n예측값: " + currentPredict.get(i) + "\n";
         }
-        ssb = new SpannableStringBuilder(station_in_course);
-        String word = ssb.toString();
-        String find = "포화도: ";
-        for (int index = word.indexOf(find); index >= 0; index = word.indexOf(find, index + 1)) {
 
-            int start = index;
-            int end = start + find.length() + 3;
-
-            String t2 = word.substring(end-3, end-1);
-            int t = Integer.parseInt(t2);
-            System.out.println(t);
-
-            if (t >0 && t <=50) {
-                ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#008000")), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                ssb.setSpan(new StyleSpan(Typeface.BOLD), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                ssb.setSpan(new RelativeSizeSpan(1.5f), start, end, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
-            }
-            else if(t >50 && t <=100)
-            {
-                ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#ffcc66")), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                ssb.setSpan(new StyleSpan(Typeface.BOLD), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                ssb.setSpan(new RelativeSizeSpan(1.5f), start, end, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
-            }
-            else if(t>100 && t < 150)
-            {
-                ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#fdff00")), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                ssb.setSpan(new StyleSpan(Typeface.BOLD), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                ssb.setSpan(new RelativeSizeSpan(1.5f), start, end, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
-            }
-            else if(t < 200)
-            {
-                ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#ff0000")), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                ssb.setSpan(new StyleSpan(Typeface.BOLD), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                ssb.setSpan(new RelativeSizeSpan(1.5f), start, end, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
-            }
-            else
-            {
-                ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#0000ff")), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                ssb.setSpan(new StyleSpan(Typeface.BOLD), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                ssb.setSpan(new RelativeSizeSpan(1.0f), start, end, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
-            }
-            
-            
-//            ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#FF6702")), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-//            ssb.setSpan(new StyleSpan(Typeface.BOLD), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-//            ssb.setSpan(new RelativeSizeSpan(1.3f), start, end, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-//        }
-            tv_data2.setText(ssb);
-//
-//        TextView textView = findViewById(R.id.tv_data2);
-//        String content = textView.getText().toString();
-//        SpannableString spannableString = new SpannableString(content);
-//
-//
-//        String word = "예측값: ";
-//        int start = content.indexOf(word);
-//        int end = start + word.length()+3;
-//
-//        spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#FF6702")), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-//        spannableString.setSpan(new StyleSpan(Typeface.BOLD), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-//        spannableString.setSpan(new RelativeSizeSpan(1.3f), start, end, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
-//
-//        textView.setText(spannableString);
-        }
+        tv_data2.setText(station_in_course);
     }
 }

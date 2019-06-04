@@ -41,6 +41,7 @@ public class InterfaceEdSt {
         intent.putExtra("Day", day);
         intent.putExtra("Hour", hour);
         intent.putExtra("Minute", minute);
+        this.mContext.finish();
         this.mContext.startActivity(intent);
     }
 }

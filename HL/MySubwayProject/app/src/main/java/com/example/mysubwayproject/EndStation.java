@@ -9,7 +9,7 @@ import android.widget.TextView;
 * */
 public class EndStation extends MapMaker {
 
-    private ImageView btnBackSubway;
+
     private TextView textPageNM;
     private InterfaceEdSt mWebViewInterface;
 

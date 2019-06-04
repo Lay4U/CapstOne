@@ -31,13 +31,13 @@ def create_dataset(signal_data, look_back=1):
 
 look_back = 20
 # data1 = df[df['name']==s[0]]
-data1 = df[df['name']=='s[0]']
+data1 = df[df['name']==s[0]]
 print(data1)
 data = data1['a']
 #     data = data.value
 data = data.values.astype('float32')
 data = data.reshape(len(data), 1)
-
+print(data.shape)
 scaler = MinMaxScaler(feature_range=(0, 1))
 data = scaler.fit_transform(data)
 
