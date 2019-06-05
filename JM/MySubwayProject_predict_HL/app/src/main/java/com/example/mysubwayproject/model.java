@@ -1,6 +1,12 @@
 package com.example.mysubwayproject;
 
+import android.app.Activity;
+import android.content.res.Resources;
+import android.os.Bundle;
+
 import java.io.File;
+import java.io.InputStream;
+import java.util.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -8,14 +14,17 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.lang.Object;
 
-public class model {
+public class model extends Activity {
+
 
 
     public float modelPredict(String StationNM, int day, int hour, int minute)
     {
+
+
         Scanner scan = null;
         try {
-            scan = new Scanner(new File("file:///android_lib/"+StationNM+".csv"));
+            scan = new Scanner(new File(StationNM+".csv"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

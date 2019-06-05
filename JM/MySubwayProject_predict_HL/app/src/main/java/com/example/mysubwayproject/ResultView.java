@@ -1,5 +1,6 @@
 package com.example.mysubwayproject;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Color;
@@ -16,6 +17,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
 import org.json.JSONObject;
 
 import com.google.gson.JsonArray;
@@ -28,10 +30,15 @@ import com.odsay.odsayandroidsdk.OnResultCallbackListener;
 import com.opencsv.CSVReader;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Scanner;
 
 /*
  * 최종 화면을 구성할 예정인 소스코드 입니다!
@@ -96,12 +103,13 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
 
                 JsonParser jsonParser = new JsonParser();
                 JsonObject jsonObj = (JsonObject) jsonParser.parse(jsonObject.toString());
-                Log.i("gg", jsonObj+"\n");
+                Log.i("gg", jsonObj + "\n");
                 JsonObject resultObj = (JsonObject) jsonObj.get("result");
-                Log.i("gg", resultObj+"\n");
+                Log.i("gg", resultObj + "\n");
                 JsonArray stationArray = (JsonArray) resultObj.get("station");
-                Log.i("gg", stationArray+"\n");
-
+                Log.i("gg", stationArray + "\n");
+//                JsonObject driveInfoSetObj = (JsonObject) resultObj.get("driveInfoSet");
+//                Log.i("gg", driveInfoSetObj+"\n");
                 String stationName = "";
                 String stationID = "";
                 for (int i = 0; i < stationArray.size(); i++) {// 수정필요!!!!
@@ -116,8 +124,11 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
                 }
                 if (StationID.equals("null"))
                     StationID = stationID;
-                else
+                else {
                     shortestPathSearching(StationID, stationID);
+                    Log.i("tt", StationID + "\n");
+                    Log.i("tt", stationID + "\n");
+                }
             }
 
             // 호출 실패 시 실행
@@ -173,24 +184,27 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
             @Override
             public void onSuccess(ODsayData odsayData, API api) {
                 jsonObject = odsayData.getJson();
+                Log.i("gg0", jsonObject + "\n");
                 JsonParser jsonParser = new JsonParser();
-                Log.i("gg", jsonParser+"\n");
+                Log.i("gg1", jsonParser + "\n");
                 JsonObject jsonObj = (JsonObject) jsonParser.parse(jsonObject.toString());
-                Log.i("gg", jsonObj+"\n");
+                Log.i("gg2", jsonObj + "\n");
                 JsonObject resultObj = (JsonObject) jsonObj.get("result");
-                Log.i("gg", resultObj+"\n");
+                Log.i("gg3", resultObj + "\n");
                 JsonObject driveInfoSetObj = (JsonObject) resultObj.get("driveInfoSet");
-                Log.i("gg", driveInfoSetObj+"\n");
+                Log.i("gg4", driveInfoSetObj + "\n");
                 // JsonObject exChangeInfoSetObj = (JsonObject)
                 // resultObj.get("exChangeInfoSet");
                 JsonObject stationSetObj = (JsonObject) resultObj.get("stationSet");
-                Log.i("gg", stationSetObj+"\n");
+                Log.i("gg5", stationSetObj + "\n");
                 JsonArray driveInfoArray = (JsonArray) driveInfoSetObj.get("driveInfo");
-                Log.i("gg", driveInfoArray+"\n");
+                Log.i("gg6", driveInfoArray + "\n");
                 // JsonArray exChangeInfoArray = (JsonArray)
                 // exChangeInfoSetObj.get("exChangeInfo");
                 JsonArray stationArray = (JsonArray) stationSetObj.get("stations");
-                Log.i("gg", stationArray+"\n");
+                Log.i("gg7", stationArray + "\n");
+
+
                 String dayOfWeek;
                 Calendar cal = Calendar.getInstance();
                 cal.set(year, month - 1, day);
@@ -207,13 +221,15 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
                         dayOfWeek = "평일";
                         break;
                 }
-                System.out.println(dayOfWeek);
+//                System.out.println(dayOfWeek);
                 for (int i = 0; i < driveInfoArray.size(); i++) {
                     JsonObject object = (JsonObject) driveInfoArray.get(i);
                     exStation.add(object.get("startName").getAsString());
                     wayNMArray.add(object.get("wayName").getAsString());
+                    Log.i("z", object.get("wayName").getAsString() + "\n");
                 }
 
+                model m = new model();
                 currentHourArray.add(hour);
                 currentMinArray.add(minute);
 
@@ -227,8 +243,15 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
                             break;
                         }
                     StationNMArray.add(current_Station);
-                    currentPredict.add(modelPredict(current_Station, dayOfWeek, wayNMArray.get(setline),
+                    Log.i("modelpredict input", current_Station + "\n");
+                    Log.i("modelpredict input", wayNMArray.get(setline) + "\n");
+                    Log.i("modelpredict input", dayNum + "\n");
+                    Log.i("modelpredict input", currentHourArray.get(i) + "\n");
+                    Log.i("modelpredict input", currentMinArray.get(i) + "\n");
+                    currentPredict.add(modelPredict(current_Station, wayNMArray.get(setline), dayNum,
                             currentHourArray.get(i), currentMinArray.get(i)));
+
+
                     currentHourArray.add(hour);
                     currentMinArray.add(minute + object.get("travelTime").getAsInt());
                     if (currentMinArray.get(i + 1) >= 60) {
@@ -239,8 +262,10 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
                                 .add((minute + object.get("travelTime").getAsInt() % 60) - 60); /* 60분 이상으로 나옴 수정 */
                     }
                 }
+
                 StationNMArray.add(endStationNM);
-                currentPredict.add(modelPredict(endStationNM, dayOfWeek, wayNMArray.get(setline),
+//                currentPredict.add(m.modelPredict(endStationNM, wayNMArray.get(setline), dayNum, currentHourArray.get(stationArray.size()), currentMinArray.get(stationArray.size()), ));
+                currentPredict.add(modelPredict(endStationNM, wayNMArray.get(setline), dayNum,
                         currentHourArray.get(stationArray.size()), currentMinArray.get(stationArray.size())));
                 makeCourse();
             }
@@ -256,46 +281,76 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
     }
     //////////////////////////////////
 
-    public float modelPredict(String StationNM, String dayOfWeek, String line, int hour, int minute) {
+    public float modelPredict(String StationNM, String line, int day, int hour, int minute) {
         AssetManager assetManager = getApplication().getAssets();
-        ArrayList<String[]> model_list = new ArrayList<>();
+        ArrayList<String[]> records = new ArrayList<String[]>();
+        ArrayList<Integer> model_list = new ArrayList<Integer>();
+        Scanner scan = null;
         try {
-
-            InputStreamReader is = new InputStreamReader(assetManager.open("line2.csv"));
-            BufferedReader br = new BufferedReader(is);
-
-            CSVReader reader = new CSVReader(br);
-            for (String[] data : reader.readAll()) {
-                model_list.add(data);
-            }
+            scan = new Scanner(assetManager.open(StationNM + ".csv"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         } catch (IOException e) {
-            System.out.println("can not found .csv");
+            e.printStackTrace();
         }
 
-        ArrayList<String[]> model_list_setStationNM = new ArrayList<>();
-        for (String[] data : model_list) {
-            if (data[2].equals(StationNM))
-                model_list_setStationNM.add(data);
-        }
-        if (model_list_setStationNM.size() == 0)
-            return 0;
-
-        ArrayList<String[]> model_list_setDate = new ArrayList<>();
-        for (String[] data : model_list_setStationNM) {
-            if (data[0].equals(dayOfWeek))
-                model_list_setDate.add(data);
+        //홀수 내선 짝수 외선
+        if (line.equals("외선순환"))
+            scan.nextLine();
+        while (scan.hasNext()) {
+            String[] record;
+            record = scan.nextLine().split(",");
+            records.add(record);
+            if (scan.hasNext())
+                scan.nextLine();
         }
 
-        String[] model_setComplet = new String[29];
-        for (String[] data : model_list_setDate) {
-            if (data[1].equals(line))
-                model_setComplet = data;
+        //String -> int
+        for (String[] temp : records) {
+            for (String temp1 : temp) {
+                int val = new BigDecimal(temp1).intValue();
+                model_list.add(val);
+            }
         }
 
-        float res;
-        res = Float.parseFloat(model_setComplet[hour + 3]) + Float.parseFloat(model_setComplet[hour + 4]);
-        res = res / 60 * minute;
-        return res;
+        //model 생성 i는 x축
+        int[] model = new int[model_list.size()];
+        for (int i = 0; i < model.length; i++) {
+            model[i] = model_list.get(i).intValue();
+        }
+
+        int x1 = 0;
+        int x2 = 0;
+        if (day == 2 || day == 3 || day == 4 || day == 5 || day == 6) { //평일
+            x1 = hour;
+            x2 = hour + 1;
+        } else if (day == 7) {  //토요일
+            x1 = 20 + hour;
+            x2 = 20 + hour + 1;
+        } else if (day == 1) {  //일요일
+            x1 = 40 + hour;
+            x2 = 40 + hour + 1;
+        }
+
+        float y1 = model[x1];
+        float y2 = model[x2];
+        float a = (y2 - y1); //(x2-x1)은 항상1
+        float b = y2 - a;
+
+        // 24분에 해당하는점을 구한다.
+
+        float x = (float) (1.0 / 60.0 * minute);
+        float y = a * x + b;
+//        System.out.println("x1 :" + x1);
+//        System.out.println("x2 :" + x2);
+//        System.out.println("y1 :" + y1);
+//        System.out.println("y2 :" + y2);
+//        System.out.println("a :" + a);
+//        System.out.println("b :" + b);
+//        System.out.println("x :" + x);
+//        System.out.print(y);
+
+        return y;
     }
 
     void makeCourse() {
@@ -322,7 +377,7 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
 
         }
         ssb = new SpannableStringBuilder(station_in_course);
-        String word = ssb.toString();
+        String word = ssb.toString() + "   ";
         String find = "포화도: ";
         for (int index = word.indexOf(find); index >= 0; index = word.indexOf(find, index + 1)) {
 
@@ -330,13 +385,13 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
             int end = start + find.length() + 3;
             String t1 = word.substring(start, end);
             String t2 = word.substring(end - 3, end);
-            t2 = t2.replaceAll("\\s+","");
-            int len = end - start;
-            Log.i("len", len + "\n");
-            Log.i("t1", t1 + "\n");
-            Log.i("t2", t2 + "\n");
+            t2 = t2.replaceAll("\\s+", "");
+//            Log.i("start", start + "\n");
+//            Log.i("end", end + "\n");
+//            Log.i("t1", t1 + "\n");
+//            Log.i("t2", t2 + "\n");
             int t = Integer.parseInt(t2);
-            Log.i("t", t + "\n");
+//            Log.i("t", t + "\n");
 
             if (t > 0 && t <= 50) {
                 ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#008000")), start, end,
