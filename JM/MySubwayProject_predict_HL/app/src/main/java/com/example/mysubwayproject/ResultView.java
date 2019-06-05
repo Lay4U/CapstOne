@@ -12,6 +12,7 @@ import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
 import android.text.style.StyleSpan;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -69,24 +70,25 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
         this.hour = getIntent().getIntExtra("Hour", hour);
         this.minute = getIntent().getIntExtra("Minute", minute);
 
-        TextView textPageNM = (TextView)findViewById(R.id.start_and_end);
-        textPageNM.setText(startStationNM + "    "+   endStationNM);
+        TextView textPageNM = (TextView) findViewById(R.id.start_and_end);
+        textPageNM.setText(startStationNM + "    " + endStationNM);
         findStationID();
 
-        btnSubway = (Button)findViewById(R.id.complete);
+        btnSubway = (Button) findViewById(R.id.complete);
         btnSubway.setOnClickListener(this);
     }
+
     @Override
-    public void onClick(View v){
+    public void onClick(View v) {
         this.finish();
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
-    protected void findStationID(){
+    protected void findStationID() {
         odsayService = ODsayService.init(ResultView.this, getString(R.string.odsay_key));
 
-        OnResultCallbackListener onResultCallbackListener = new OnResultCallbackListener(){
+        OnResultCallbackListener onResultCallbackListener = new OnResultCallbackListener() {
 
             @Override
             public void onSuccess(ODsayData odsayData, API api) {
@@ -94,93 +96,107 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
 
                 JsonParser jsonParser = new JsonParser();
                 JsonObject jsonObj = (JsonObject) jsonParser.parse(jsonObject.toString());
+                Log.i("gg", jsonObj+"\n");
                 JsonObject resultObj = (JsonObject) jsonObj.get("result");
+                Log.i("gg", resultObj+"\n");
                 JsonArray stationArray = (JsonArray) resultObj.get("station");
+                Log.i("gg", stationArray+"\n");
 
                 String stationName = "";
                 String stationID = "";
-                for (int i = 0; i < stationArray.size(); i++) {//수정필요!!!!
+                for (int i = 0; i < stationArray.size(); i++) {// 수정필요!!!!
                     JsonObject object = (JsonObject) stationArray.get(i);
                     stationName = object.get("stationName").getAsString();
                     stationID = object.get("stationID").getAsString();
-                    if(StationID.equals("null") && stationName.equals(startStationNM)) {
+                    if (StationID.equals("null") && stationName.equals(startStationNM)) {
                         break;
-                    }
-                    else if(!StationID.equals("null") && stationName.equals(endStationNM)){
+                    } else if (!StationID.equals("null") && stationName.equals(endStationNM)) {
                         break;
                     }
                 }
-                if(StationID.equals("null")) StationID = stationID;
-                else shortestPathSearching(StationID, stationID);
+                if (StationID.equals("null"))
+                    StationID = stationID;
+                else
+                    shortestPathSearching(StationID, stationID);
             }
+
             // 호출 실패 시 실행
             @Override
             public void onError(int i, String s, API api) {
                 tv_data2.setText("API : " + api.name() + "\n" + "error");
             }
         };
-        if(startStationNM.equals("광교")){
-            odsayService.requestSearchStation("광교(경기대)", "1000", "2", "10", "0", "127.0363583:37.5113295", onResultCallbackListener);
-        }
-        else if(startStationNM.equals("광교중앙")){
-            odsayService.requestSearchStation("광교중앙(아주대)", "1000", "2", "10", "0", "127.0363583:37.5113295", onResultCallbackListener);
-        }
-        else if(startStationNM.equals("신촌(경의중앙선)")){
-            odsayService.requestSearchStation("신촌", "1000", "2", "10", "1", "127.0363583:37.5113295", onResultCallbackListener);
-        }
-        else if(startStationNM.equals("녹사평")){
-            odsayService.requestSearchStation("녹사평(용산구청)", "1000", "2", "10", "1", "127.0363583:37.5113295", onResultCallbackListener);
-        }
-        else if(startStationNM.equals("봉화산")){
-            odsayService.requestSearchStation("봉화산(서울의료원)", "1000", "2", "10", "1", "127.0363583:37.5113295", onResultCallbackListener);
-        }
-        else {
-            odsayService.requestSearchStation(startStationNM, "1000", "2", "10", "0", "127.0363583:37.5113295", onResultCallbackListener);
+        if (startStationNM.equals("광교")) {
+            odsayService.requestSearchStation("광교(경기대)", "1000", "2", "10", "0", "127.0363583:37.5113295",
+                    onResultCallbackListener);
+        } else if (startStationNM.equals("광교중앙")) {
+            odsayService.requestSearchStation("광교중앙(아주대)", "1000", "2", "10", "0", "127.0363583:37.5113295",
+                    onResultCallbackListener);
+        } else if (startStationNM.equals("신촌(경의중앙선)")) {
+            odsayService.requestSearchStation("신촌", "1000", "2", "10", "1", "127.0363583:37.5113295",
+                    onResultCallbackListener);
+        } else if (startStationNM.equals("녹사평")) {
+            odsayService.requestSearchStation("녹사평(용산구청)", "1000", "2", "10", "1", "127.0363583:37.5113295",
+                    onResultCallbackListener);
+        } else if (startStationNM.equals("봉화산")) {
+            odsayService.requestSearchStation("봉화산(서울의료원)", "1000", "2", "10", "1", "127.0363583:37.5113295",
+                    onResultCallbackListener);
+        } else {
+            odsayService.requestSearchStation(startStationNM, "1000", "2", "10", "0", "127.0363583:37.5113295",
+                    onResultCallbackListener);
         }
 
-        if(endStationNM.equals("광교")){
-            odsayService.requestSearchStation("광교(경기대)", "1000", "2", "10", "0", "127.0363583:37.5113295", onResultCallbackListener);
-        }
-        else if(endStationNM.equals("광교중앙")) {
-            odsayService.requestSearchStation("광교중앙(아주대)", "1000", "2","10","0","127.0363583:37.5113295", onResultCallbackListener);
-        }
-        else if(endStationNM.equals("신촌(경의중앙선)")){
-            odsayService.requestSearchStation("신촌", "1000", "2", "10", "1", "127.0363583:37.5113295", onResultCallbackListener);
-        }
-        else if(endStationNM.equals("녹사평")){
-            odsayService.requestSearchStation("녹사평(용산구청)", "1000", "2", "10", "1", "127.0363583:37.5113295", onResultCallbackListener);
-        }
-        else if(endStationNM.equals("봉화산")){
-            odsayService.requestSearchStation("봉화산(서울의료원)", "1000", "2", "10", "1", "127.0363583:37.5113295", onResultCallbackListener);
-        }
-        else {
-            odsayService.requestSearchStation(endStationNM, "1000", "2","10","0","127.0363583:37.5113295", onResultCallbackListener);
+        if (endStationNM.equals("광교")) {
+            odsayService.requestSearchStation("광교(경기대)", "1000", "2", "10", "0", "127.0363583:37.5113295",
+                    onResultCallbackListener);
+        } else if (endStationNM.equals("광교중앙")) {
+            odsayService.requestSearchStation("광교중앙(아주대)", "1000", "2", "10", "0", "127.0363583:37.5113295",
+                    onResultCallbackListener);
+        } else if (endStationNM.equals("신촌(경의중앙선)")) {
+            odsayService.requestSearchStation("신촌", "1000", "2", "10", "1", "127.0363583:37.5113295",
+                    onResultCallbackListener);
+        } else if (endStationNM.equals("녹사평")) {
+            odsayService.requestSearchStation("녹사평(용산구청)", "1000", "2", "10", "1", "127.0363583:37.5113295",
+                    onResultCallbackListener);
+        } else if (endStationNM.equals("봉화산")) {
+            odsayService.requestSearchStation("봉화산(서울의료원)", "1000", "2", "10", "1", "127.0363583:37.5113295",
+                    onResultCallbackListener);
+        } else {
+            odsayService.requestSearchStation(endStationNM, "1000", "2", "10", "0", "127.0363583:37.5113295",
+                    onResultCallbackListener);
         }
     }
-    protected void shortestPathSearching(String startStationID, String endStationID) {
 
-        OnResultCallbackListener onResultCallbackListener = new OnResultCallbackListener(){
+    protected void shortestPathSearching(String startStationID, String endStationID) {
+        odsayService = ODsayService.init(ResultView.this, getString(R.string.odsay_key));
+        OnResultCallbackListener onResultCallbackListener = new OnResultCallbackListener() {
             @Override
             public void onSuccess(ODsayData odsayData, API api) {
                 jsonObject = odsayData.getJson();
                 JsonParser jsonParser = new JsonParser();
+                Log.i("gg", jsonParser+"\n");
                 JsonObject jsonObj = (JsonObject) jsonParser.parse(jsonObject.toString());
+                Log.i("gg", jsonObj+"\n");
                 JsonObject resultObj = (JsonObject) jsonObj.get("result");
-
+                Log.i("gg", resultObj+"\n");
                 JsonObject driveInfoSetObj = (JsonObject) resultObj.get("driveInfoSet");
-                //JsonObject exChangeInfoSetObj = (JsonObject) resultObj.get("exChangeInfoSet");
+                Log.i("gg", driveInfoSetObj+"\n");
+                // JsonObject exChangeInfoSetObj = (JsonObject)
+                // resultObj.get("exChangeInfoSet");
                 JsonObject stationSetObj = (JsonObject) resultObj.get("stationSet");
-
+                Log.i("gg", stationSetObj+"\n");
                 JsonArray driveInfoArray = (JsonArray) driveInfoSetObj.get("driveInfo");
-                //JsonArray exChangeInfoArray = (JsonArray) exChangeInfoSetObj.get("exChangeInfo");
+                Log.i("gg", driveInfoArray+"\n");
+                // JsonArray exChangeInfoArray = (JsonArray)
+                // exChangeInfoSetObj.get("exChangeInfo");
                 JsonArray stationArray = (JsonArray) stationSetObj.get("stations");
-
+                Log.i("gg", stationArray+"\n");
                 String dayOfWeek;
                 Calendar cal = Calendar.getInstance();
-                cal.set(year, month-1, day);
+                cal.set(year, month - 1, day);
                 int dayNum = cal.get(Calendar.DAY_OF_WEEK);
 
-                switch(dayNum){
+                switch (dayNum) {
                     case 1:
                         dayOfWeek = "일요일";
                         break;
@@ -205,24 +221,27 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
                 for (int i = 0; i < stationArray.size(); i++) {
                     JsonObject object = (JsonObject) stationArray.get(i);
                     String current_Station = object.get("startName").getAsString();
-                    for(String name : exStation)
-                        if(current_Station.equals(name)){
+                    for (String name : exStation)
+                        if (current_Station.equals(name)) {
                             setline++;
                             break;
                         }
                     StationNMArray.add(current_Station);
-                    currentPredict.add(modelPredict(current_Station, dayOfWeek, wayNMArray.get(setline),currentHourArray.get(i), currentMinArray.get(i)));
+                    currentPredict.add(modelPredict(current_Station, dayOfWeek, wayNMArray.get(setline),
+                            currentHourArray.get(i), currentMinArray.get(i)));
                     currentHourArray.add(hour);
                     currentMinArray.add(minute + object.get("travelTime").getAsInt());
-                    if(currentMinArray.get(i+1) >= 60) {
+                    if (currentMinArray.get(i + 1) >= 60) {
                         currentHourArray.remove(i + 1);
                         currentHourArray.add(hour + currentMinArray.get(i + 1) / 60);
                         currentMinArray.remove(i + 1);
-                        currentMinArray.add((minute + object.get("travelTime").getAsInt() % 60)-60); /*60분 이상으로 나옴 수정*/
+                        currentMinArray
+                                .add((minute + object.get("travelTime").getAsInt() % 60) - 60); /* 60분 이상으로 나옴 수정 */
                     }
                 }
                 StationNMArray.add(endStationNM);
-                currentPredict.add(modelPredict(endStationNM, dayOfWeek, wayNMArray.get(setline),currentHourArray.get(stationArray.size()), currentMinArray.get(stationArray.size())));
+                currentPredict.add(modelPredict(endStationNM, dayOfWeek, wayNMArray.get(setline),
+                        currentHourArray.get(stationArray.size()), currentMinArray.get(stationArray.size())));
                 makeCourse();
             }
 
@@ -237,8 +256,7 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
     }
     //////////////////////////////////
 
-    public float modelPredict(String StationNM, String dayOfWeek, String line, int hour, int minute)
-    {
+    public float modelPredict(String StationNM, String dayOfWeek, String line, int hour, int minute) {
         AssetManager assetManager = getApplication().getAssets();
         ArrayList<String[]> model_list = new ArrayList<>();
         try {
@@ -247,7 +265,7 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
             BufferedReader br = new BufferedReader(is);
 
             CSVReader reader = new CSVReader(br);
-            for(String[] data : reader.readAll()){
+            for (String[] data : reader.readAll()) {
                 model_list.add(data);
             }
         } catch (IOException e) {
@@ -255,57 +273,52 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
         }
 
         ArrayList<String[]> model_list_setStationNM = new ArrayList<>();
-        for(String[] data : model_list){
-            if(data[2].equals(StationNM))
+        for (String[] data : model_list) {
+            if (data[2].equals(StationNM))
                 model_list_setStationNM.add(data);
         }
-        if(model_list_setStationNM.size() == 0)
+        if (model_list_setStationNM.size() == 0)
             return 0;
 
         ArrayList<String[]> model_list_setDate = new ArrayList<>();
-        for(String[] data : model_list_setStationNM){
-            if(data[0].equals(dayOfWeek))
+        for (String[] data : model_list_setStationNM) {
+            if (data[0].equals(dayOfWeek))
                 model_list_setDate.add(data);
         }
 
         String[] model_setComplet = new String[29];
-        for(String[] data : model_list_setDate){
-            if(data[1].equals(line))
+        for (String[] data : model_list_setDate) {
+            if (data[1].equals(line))
                 model_setComplet = data;
         }
 
         float res;
-        res = Float.parseFloat(model_setComplet[hour+3]) + Float.parseFloat(model_setComplet[hour+4]);
-        res = res/60*minute;
+        res = Float.parseFloat(model_setComplet[hour + 3]) + Float.parseFloat(model_setComplet[hour + 4]);
+        res = res / 60 * minute;
         return res;
     }
 
     void makeCourse() {
 
         ArrayList<String> stationRoute = new ArrayList<String>();
-/*
-        stationRoute.add(exStation+"");
-        stationRoute.add(endStationNM + "\n");
-        stationRoute.add("\nStation: " + StationNMArray
-                + "\nDate: " + year + "년 " +  month + "월 " +  day + "일"
-                + "\nTime: " + currentHourArray + "시 " + currentMinArray + "분"
-                + "\n예측값: " + currentPredict+ "\n");
-                */
-
+        /*
+         * stationRoute.add(exStation+""); stationRoute.add(endStationNM + "\n");
+         * stationRoute.add("\nStation: " + StationNMArray + "\nDate: " + year + "년 " +
+         * month + "월 " + day + "일" + "\nTime: " + currentHourArray + "시 " +
+         * currentMinArray + "분" + "\n예측값: " + currentPredict+ "\n");
+         */
 
         String station_in_course = "";
         for (String data : exStation)
             station_in_course = station_in_course + data + " ";
         station_in_course = station_in_course + endStationNM + "\n";
 
-
         SpannableStringBuilder ssb;
         for (int i = 0; i < StationNMArray.size(); i++) {
             String current_Station = StationNMArray.get(i);
-            station_in_course = station_in_course + "\n역명: " + current_Station
-                    + "\n날짜: " + year + "년 " + month + "월 " + day + "일"
-                    + "\n시간: " + currentHourArray.get(i) + "시 " + currentMinArray.get(i) + "분"
-                    + "\n포화도: " + Math.round(currentPredict.get(i)) + "\n";
+            station_in_course = station_in_course + "\n역명: " + current_Station + "\n날짜: " + year + "년 " + month + "월 "
+                    + day + "일" + "\n시간: " + currentHourArray.get(i) + "시 " + currentMinArray.get(i) + "분" + "\n포화도: "
+                    + Math.round(currentPredict.get(i)) + "\n";
 
         }
         ssb = new SpannableStringBuilder(station_in_course);
@@ -315,63 +328,70 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
 
             int start = index;
             int end = start + find.length() + 3;
-
-            String t2 = word.substring(end-3, end-1);
+            String t1 = word.substring(start, end);
+            String t2 = word.substring(end - 3, end);
+            t2 = t2.replaceAll("\\s+","");
+            int len = end - start;
+            Log.i("len", len + "\n");
+            Log.i("t1", t1 + "\n");
+            Log.i("t2", t2 + "\n");
             int t = Integer.parseInt(t2);
-            System.out.println(t);
+            Log.i("t", t + "\n");
 
-            if (t >0 && t <=50) {
-                ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#008000")), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            if (t > 0 && t <= 50) {
+                ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#008000")), start, end,
+                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 ssb.setSpan(new StyleSpan(Typeface.BOLD), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 ssb.setSpan(new RelativeSizeSpan(1.5f), start, end, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
-            }
-            else if(t >50 && t <=100)
-            {
-                ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#ffcc66")), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            } else if (t > 50 && t <= 100) {
+                ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#ffcc66")), start, end,
+                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 ssb.setSpan(new StyleSpan(Typeface.BOLD), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 ssb.setSpan(new RelativeSizeSpan(1.5f), start, end, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
-            }
-            else if(t>100 && t < 150)
-            {
-                ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#fdff00")), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            } else if (t > 100 && t < 150) {
+                ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#fdff00")), start, end,
+                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 ssb.setSpan(new StyleSpan(Typeface.BOLD), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 ssb.setSpan(new RelativeSizeSpan(1.5f), start, end, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
-            }
-            else if(t < 200)
-            {
-                ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#ff0000")), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            } else if (t < 200) {
+                ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#ff0000")), start, end,
+                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 ssb.setSpan(new StyleSpan(Typeface.BOLD), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 ssb.setSpan(new RelativeSizeSpan(1.5f), start, end, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
-            }
-            else
-            {
-                ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#0000ff")), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            } else {
+                ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#0000ff")), start, end,
+                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 ssb.setSpan(new StyleSpan(Typeface.BOLD), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 ssb.setSpan(new RelativeSizeSpan(1.0f), start, end, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
             }
 
+            // ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#FF6702")), start, end,
+            // Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            // ssb.setSpan(new StyleSpan(Typeface.BOLD), start, end,
+            // Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            // ssb.setSpan(new RelativeSizeSpan(1.3f), start, end,
+            // SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
 
-//            ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#FF6702")), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-//            ssb.setSpan(new StyleSpan(Typeface.BOLD), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-//            ssb.setSpan(new RelativeSizeSpan(1.3f), start, end, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-//        }
+            // }
             tv_data2.setText(ssb);
-//
-//        TextView textView = findViewById(R.id.tv_data2);
-//        String content = textView.getText().toString();
-//        SpannableString spannableString = new SpannableString(content);
-//
-//
-//        String word = "예측값: ";
-//        int start = content.indexOf(word);
-//        int end = start + word.length()+3;
-//
-//        spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#FF6702")), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-//        spannableString.setSpan(new StyleSpan(Typeface.BOLD), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-//        spannableString.setSpan(new RelativeSizeSpan(1.3f), start, end, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
-//
-//        textView.setText(spannableString);
+            //
+            // TextView textView = findViewById(R.id.tv_data2);
+            // String content = textView.getText().toString();
+            // SpannableString spannableString = new SpannableString(content);
+            //
+            //
+            // String word = "예측값: ";
+            // int start = content.indexOf(word);
+            // int end = start + word.length()+3;
+            //
+            // spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#FF6702")),
+            // start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            // spannableString.setSpan(new StyleSpan(Typeface.BOLD), start, end,
+            // Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            // spannableString.setSpan(new RelativeSizeSpan(1.3f), start, end,
+            // SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
+            //
+            // textView.setText(spannableString);
         }
     }
 }
