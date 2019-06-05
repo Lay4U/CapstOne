@@ -56,7 +56,7 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
     private TextView tv_data2;
     private ODsayService odsayService;
     Button btnSubway;
-    Float NumberOfPassenger;
+
     ArrayList<String> StationNMArray = new ArrayList<>();
     ArrayList<String> exStation = new ArrayList<>();
     ArrayList<String> wayNMArray = new ArrayList<>();
@@ -248,14 +248,8 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
                     Log.i("modelpredict input", dayNum + "\n");
                     Log.i("modelpredict input", currentHourArray.get(i) + "\n");
                     Log.i("modelpredict input", currentMinArray.get(i) + "\n");
-                    if(i==0) {
-                        currentPredict.add(modelPredict(current_Station, wayNMArray.get(setline), dayNum,
-                                currentHourArray.get(i), currentMinArray.get(i), 0));
-                    }
-                    else{
-                        currentPredict.add(modelPredict(current_Station, wayNMArray.get(setline), dayNum,
-                                currentHourArray.get(i), currentMinArray.get(i), 1));
-                    }
+                    currentPredict.add(modelPredict(current_Station, wayNMArray.get(setline), dayNum,
+                            currentHourArray.get(i), currentMinArray.get(i)));
 
 
                     currentHourArray.add(hour);
@@ -272,7 +266,7 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
                 StationNMArray.add(endStationNM);
 //                currentPredict.add(m.modelPredict(endStationNM, wayNMArray.get(setline), dayNum, currentHourArray.get(stationArray.size()), currentMinArray.get(stationArray.size()), ));
                 currentPredict.add(modelPredict(endStationNM, wayNMArray.get(setline), dayNum,
-                        currentHourArray.get(stationArray.size()), currentMinArray.get(stationArray.size()), 1));
+                        currentHourArray.get(stationArray.size()), currentMinArray.get(stationArray.size())));
                 makeCourse();
             }
 
@@ -287,70 +281,66 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
     }
     //////////////////////////////////
 
-    public float modelPredict(String StationNM, String line, int day, int hour, int minute, int FirstOrNot) {
+    public float modelPredict(String StationNM, String line, int day, int hour, int minute) {
         AssetManager assetManager = getApplication().getAssets();
-
-        ArrayList<String[]> records2 = new ArrayList<String[]>();
+        ArrayList<String[]> records = new ArrayList<String[]>();
         ArrayList<Integer> model_list = new ArrayList<Integer>();
         Scanner scan = null;
-        Scanner scan2 = null;
+        try {
+            scan = new Scanner(assetManager.open(StationNM + ".csv"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        if (FirstOrNot==0) // 첫번째 : 이전탑승값
-        {
-            ArrayList<String[]> records = new ArrayList<String[]>();
-            try {
-                scan = new Scanner(assetManager.open(StationNM + ".csv"));
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            //홀수 내선 짝수 외선
-            if (line.equals("외선순환"))
+        //홀수 내선 짝수 외선
+        if (line.equals("외선순환"))
+            scan.nextLine();
+        while (scan.hasNext()) {
+            String[] record;
+            record = scan.nextLine().split(",");
+            records.add(record);
+            if (scan.hasNext())
                 scan.nextLine();
-            while (scan.hasNext()) {
-                String[] record;
-                record = scan.nextLine().split(",");
-                records.add(record);
-                if (scan.hasNext())
-                    scan.nextLine();
+        }
+
+        //String -> int
+        for (String[] temp : records) {
+            for (String temp1 : temp) {
+                int val = new BigDecimal(temp1).intValue();
+                model_list.add(val);
             }
+        }
 
-            //String -> int
-            for (String[] temp : records) {
-                for (String temp1 : temp) {
-                    int val = new BigDecimal(temp1).intValue();
-                    model_list.add(val);
-                }
-            }
-            //model 생성 i는 x축
-            int[] model = new int[model_list.size()];
-            for (int i = 0; i < model.length; i++) {
-                model[i] = model_list.get(i).intValue();
-            }
+        //model 생성 i는 x축
+        int[] model = new int[model_list.size()];
+        for (int i = 0; i < model.length; i++) {
+            model[i] = model_list.get(i).intValue();
+        }
 
-            int x1 = 0;
-            int x2 = 0;
-            if (day == 2 || day == 3 || day == 4 || day == 5 || day == 6) { //평일
-                x1 = hour;
-                x2 = hour + 1;
-            } else if (day == 7) {  //토요일
-                x1 = 20 + hour;
-                x2 = 20 + hour + 1;
-            } else if (day == 1) {  //일요일
-                x1 = 40 + hour;
-                x2 = 40 + hour + 1;
-            }
+        int x1 = 0;
+        int x2 = 0;
+        if (day == 2 || day == 3 || day == 4 || day == 5 || day == 6) { //평일
+            x1 = hour;
+            x2 = hour + 1;
+        } else if (day == 7) {  //토요일
+            x1 = 20 + hour;
+            x2 = 20 + hour + 1;
+        } else if (day == 1) {  //일요일
+            x1 = 40 + hour;
+            x2 = 40 + hour + 1;
+        }
 
-            float y1 = model[x1];
-            float y2 = model[x2];
-            float a = (y2 - y1); //(x2-x1)은 항상1
-            float b = y2 - a;
+        float y1 = model[x1];
+        float y2 = model[x2];
+        float a = (y2 - y1); //(x2-x1)은 항상1
+        float b = y2 - a;
 
-            // 24분에 해당하는점을 구한다.
+        // 24분에 해당하는점을 구한다.
 
-            float x = (float) (1.0 / 60.0 * minute);
-            float y = a * x + b;
+        float x = (float) (1.0 / 60.0 * minute);
+        float y = a * x + b;
 //        System.out.println("x1 :" + x1);
 //        System.out.println("x2 :" + x2);
 //        System.out.println("y1 :" + y1);
@@ -359,93 +349,8 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
 //        System.out.println("b :" + b);
 //        System.out.println("x :" + x);
 //        System.out.print(y);
-            this.NumberOfPassenger = y;
-            return y;
-        }
 
-        else        //예측값
-        {
-            try {
-                scan2 = new Scanner(assetManager.open("pd_"+StationNM + ".csv"));
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            while (scan2.hasNext()) {
-                String[] record;
-                record = scan2.nextLine().split(",");
-                records2.add(record);
-
-            }
-
-            //String -> int
-            for (String[] temp : records2) {
-                for (String temp1 : temp) {
-                    int val = new BigDecimal(temp1).intValue();
-                    model_list.add(val);
-                }
-            }
-            //model 생성 i는 x축
-            int[] model = new int[model_list.size()];
-            for (int i = 0; i < model.length; i++) {
-                model[i] = model_list.get(i).intValue();
-            }
-
-            int x1 = 0;
-            int x2 = 0;
-            if (day == 2 || day == 3 || day == 4 || day == 5 || day == 6) { //평일
-                x1 = (day-1)*20 + hour;
-                x2 = (day-1)*20 + hour + 1;
-            } else if (day == 7) {  //토요일
-                x1 = (day-1)*20 + hour;
-                x2 = (day-1)*20 + hour + 1;
-            } else if (day == 1) {  //일요일
-                x1 = (day+6)*20 + hour;
-                x2 = (day+6)*20 + hour + 1;
-            }
-
-            float y1 = model[x1];
-            float y2 = model[x2];
-
-            float a = (y2 - y1); //(x2-x1)은 항상1
-            float b = y2 - a;
-
-            // 24분에 해당하는점을 구한다.
-
-            float x = (float) (1.0 / 60.0 * minute); // input은 24를 받는다.
-            float y = a * x + b;
-            System.out.println("x1 :" + x1);
-            System.out.println("x2 :" + x2);
-            System.out.println("y1 :" + y1);
-            System.out.println("y2 :" + y2);
-            System.out.println("a :" + a);
-            System.out.println("b :" + b);
-            System.out.println("x :" + x);
-            System.out.print(y);
-//        System.out.println("x1 :" + x1);
-//        System.out.println("x2 :" + x2);
-//        System.out.println("y1 :" + y1);
-//        System.out.println("y2 :" + y2);
-//        System.out.println("a :" + a);
-//        System.out.println("b :" + b);
-//        System.out.println("x :" + x);
-//        System.out.print(y);
-            this.NumberOfPassenger=y;
-            y += this.NumberOfPassenger;
-            return y;
-        }
-
-
-
-
-
-
-
-
-
-
+        return y;
     }
 
     void makeCourse() {
