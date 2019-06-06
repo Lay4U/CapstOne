@@ -282,6 +282,7 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
     //////////////////////////////////
 
     public float modelPredict(String StationNM, String line, int day, int hour, int minute) {
+        hour = (int)hour/2;
         AssetManager assetManager = getApplication().getAssets();
         ArrayList<String[]> records = new ArrayList<String[]>();
         ArrayList<Integer> model_list = new ArrayList<Integer>();
@@ -317,6 +318,7 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
         int[] model = new int[model_list.size()];
         for (int i = 0; i < model.length; i++) {
             model[i] = model_list.get(i).intValue();
+//            Log.i("model", "modle[i]:"+model[i]+"\n");
         }
 
         int x1 = 0;
@@ -341,6 +343,15 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
 
         float x = (float) (1.0 / 60.0 * minute);
         float y = a * x + b;
+        Log.i("pd", "x1: "+x1+"\n");
+        Log.i("pd", "x2: "+x2+"\n");
+        Log.i("pd", "y1: "+y1+"\n");
+        Log.i("pd", "y2: "+y2+"\n");
+        Log.i("pd", "a: "+a+"\n");
+        Log.i("pd", "b: "+b+"\n");
+        Log.i("pd", "y: "+y+"\n");
+
+
 //        System.out.println("x1 :" + x1);
 //        System.out.println("x2 :" + x2);
 //        System.out.println("y1 :" + y1);
