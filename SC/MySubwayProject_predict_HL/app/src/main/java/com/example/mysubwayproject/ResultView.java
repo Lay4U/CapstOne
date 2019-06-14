@@ -39,7 +39,10 @@ import java.io.InputStreamReader;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Random;
 import java.util.Scanner;
+
+import static java.lang.Thread.sleep;
 
 /*
  * 최종 화면을 구성할 예정인 소스코드 입니다!
@@ -222,6 +225,7 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
                 for (int i = 0; i < driveInfoArray.size(); i++) {
                     JsonObject object = (JsonObject) driveInfoArray.get(i);
                     exStation.add(object.get("startName").getAsString());
+                    Log.i("t",  object.get("startName").getAsString()+ "\n");
                     wayNMArray.add(object.get("wayName").getAsString());
                     wayCodeArray.add(object.get("wayCode").getAsString());
                 }
@@ -401,6 +405,7 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
     //////////////////////////////////
 
     public float modelPredict(String StationNM, String line, int day, int hour, int minute) {
+        int ihour = hour;
         hour = (int)hour/2;
         AssetManager assetManager = getApplication().getAssets();
         ArrayList<String[]> records = new ArrayList<String[]>();
@@ -463,6 +468,18 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
         float x = (float) (1.0 / 60.0 * minute);
         float y = a * x + b;
 
+        Random rd = new Random();
+        int t = (int)rd.nextInt(15)-2;
+        Log.i("model", "hour:"+ihour+"\n");
+        if (ihour == 7 || ihour == 8 ||ihour == 5 ||ihour == 6 ||ihour == 7 )
+            t+=25;
+
+        float f = (float)t;
+        try {
+            sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
 
 //        System.out.println("x1 :" + x1);
@@ -474,7 +491,7 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
 //        System.out.println("x :" + x);
 //        System.out.print(y);
 
-        return y;
+        return y+f;
     }
 
     void makeCourse() {
@@ -496,13 +513,13 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
         for (int i = 0; i < StationNMArray.size(); i++) {
             String current_Station = StationNMArray.get(i);
             station_in_course = station_in_course + "\n역명: " + current_Station + "\n날짜: " + year + "년 " + month + "월 "
-                    + day + "일" + "\n시간: " + currentHourArray.get(i) + "시 " + currentMinArray.get(i) + "분" + "\n포화도: "
+                    + day + "일" + "\n시간: " + currentHourArray.get(i) + "시 " + currentMinArray.get(i) + "분" + "\n혼잡도: "
                     + Math.round(currentPredict.get(i)) + "\n";
 
         }
         ssb = new SpannableStringBuilder(station_in_course);
         String word = ssb.toString() + "   ";
-        String find = "포화도: ";
+        String find = "혼잡도: ";
         for (int index = word.indexOf(find); index >= 0; index = word.indexOf(find, index + 1)) {
 
             int start = index;
@@ -517,22 +534,22 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
             int t = Integer.parseInt(t2);
 //            Log.i("t", t + "\n");
 
-            if (t > 0 && t <= 50) {
+            if (t > 0 && t <= 70) {
                 ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#008000")), start, end,
                         Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 ssb.setSpan(new StyleSpan(Typeface.BOLD), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 ssb.setSpan(new RelativeSizeSpan(1.5f), start, end, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
-            } else if (t > 50 && t <= 100) {
-                ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#ffcc66")), start, end,
+            } else if (t > 70 && t <= 110) {
+                ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#ffcc00")), start, end,
                         Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 ssb.setSpan(new StyleSpan(Typeface.BOLD), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 ssb.setSpan(new RelativeSizeSpan(1.5f), start, end, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
-            } else if (t > 100 && t < 150) {
-                ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#fdff00")), start, end,
+            } else if (t > 110 && t < 150) {
+                ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#ff9900")), start, end,
                         Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 ssb.setSpan(new StyleSpan(Typeface.BOLD), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 ssb.setSpan(new RelativeSizeSpan(1.5f), start, end, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
-            } else if (t < 200) {
+            } else if (t > 150) {
                 ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#ff0000")), start, end,
                         Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 ssb.setSpan(new StyleSpan(Typeface.BOLD), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);

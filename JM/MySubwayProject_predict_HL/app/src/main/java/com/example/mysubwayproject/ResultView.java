@@ -415,7 +415,7 @@ public class ResultView extends AppCompatActivity implements View.OnClickListene
                 ssb.setSpan(new StyleSpan(Typeface.BOLD), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 ssb.setSpan(new RelativeSizeSpan(1.5f), start, end, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
             } else if (t > 100 && t < 150) {
-                ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#fdff00")), start, end,
+                ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#db651c")), start, end,
                         Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 ssb.setSpan(new StyleSpan(Typeface.BOLD), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 ssb.setSpan(new RelativeSizeSpan(1.5f), start, end, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
