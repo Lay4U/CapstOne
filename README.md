@@ -3,6 +3,8 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
+[![Video Label](https://www.youtube.com/watch?v=bTUEXmTsu-g/0.jpg)](https://www.youtube.com/watch?v=bTUEXmTsu-g)
+
 지하철의 포화도는 계속 증가하는 추세이며, 이용객들에게 큰 불편을 안겨주고 있다. 따라서 본 프로젝트에서는 LSTM을 기반으로 전 역의 시간별 탑승 인원을 예측하는 방법을 제안한다. 제안된 모델은 전 역의 승차 인원에서 하차 인원의 수를 뺀 값인 탑승 인원을 입력으로 순환 신경망 네트워크 구조를 이용해 생성한다, 또한 사용자의 편의성을 위해 어플로 제작을 하였다. 이를 통해 전 역의 지하철 포화도를 계산, 이용객들에게 현재 시각 지하철의 포화도 제공, 이용자들의 분산효과, 정부 기관의 지하철 시간표 조정과 예산할당의 지표로 활용하는 등의 효과를 기대할 수 있다.
 
 - 지하철 혼잡도를 예측하여 혼잡도가 적은 시간에 지하철을 이용 하는것을 목표
