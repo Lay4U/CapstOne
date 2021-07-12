@@ -52,9 +52,9 @@
 ![FlowChart](./img/flowChart.png)
 
 ## implementation screen 
-![impl1](./img/imp1.png)
-![impl2](./img/imp2.png)
-![impl3](./img/imp3.png)
+![impl1](./img/impl1.png)
+![impl2](./img/impl2.png)
+![impl3](./img/impl3.png)
 
 ## License
 
