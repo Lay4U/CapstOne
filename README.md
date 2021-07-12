@@ -46,15 +46,15 @@
 
 
 ## Deploy Diagram
-![DeployDiagram](./img/deployDiagram)
+![DeployDiagram](./img/deployDiagram.png)
 
 ## Flow Chart
 ![FlowChart](./img/flowChart.png)
 
 ## implementation screen 
-![impl1](./img/imp1)
-![impl2](./img/imp2)
-![impl3](./img/imp3)
+![impl1](./img/imp1.png)
+![impl2](./img/imp2.png)
+![impl3](./img/imp3.png)
 
 ## License
 
